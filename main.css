@@ -1,0 +1,99 @@
+
+table { 
+color: #333333; /* Lighten up font color */
+font-family: Helvetica, Arial, sans-serif; /* Nicer font */
+width: 700px; 
+/*border-spacing: 0; */
+margin:0 auto;
+border:0px;
+}
+#name{
+	/*position:relative;*/
+	margin-left:35%;
+	letter-spacing: 3px;
+	font-size:35px;
+
+	
+}
+td, th { border: 1px solid #CCC;  border-radius: 5px; height: 30px; text-align:center; margin:8px; width:100px } /* Make cells a bit taller */
+
+th {
+background-color:#B0C4DE; opacity: 0.8; filter: alpha(opacity=50);
+/*background: #F3F3F3; /* Light grey background */
+font-weight: bold; /* Make sure they're bold */
+}
+
+td {
+background: #B0C4DE; /* Lighter grey background */
+text-align: center; /* Center our text */
+}
+#menu{
+		font-family: 'Open Sans';
+	
+}
+#main{
+	background-color:white;
+	overflow-y: scroll;
+	background:#778899;
+}
+#aboutme{
+
+	font-size: big;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 300;
+	line-height: 24px;
+	background-color:#B0C4DE;
+	width:800px;
+	height:610px;
+	text-align:left;
+	margin: auto;
+	border:10px;
+	border-color:#333333;
+	border-radius:10px;
+}
+
+#aboutmeContact{
+
+	background-color:#B0C4DE;
+	width:800px;
+	height:400px;
+	
+	margin:0 auto;
+	border:10px;
+	border-color:#333333;
+	border-radius:10px;
+}
+#paraContact{
+	text-align:left;
+	font-size: big;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 300;
+	line-height: 24px;
+	margin-right:50px;
+	margin-left:50px;
+
+}
+#circle
+{
+border-radius:50% 50% 50% 50%;  
+position:relative;
+width:300px;
+height:200px;
+top: 0%;
+left:0%;
+margin-top: -300px;
+margin-left: -250px;
+}
+#foot{
+	text-align:center;
+	height:30px;
+
+	border:#333333;
+	}
+	
+#paragraph{
+	margin-right:50px;
+	margin-left:50px;
+}
