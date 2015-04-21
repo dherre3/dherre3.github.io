@@ -18,13 +18,13 @@ border:0px;
 td, th { border: 1px solid #CCC;  border-radius: 5px; height: 30px; text-align:center; margin:8px; width:100px } /* Make cells a bit taller */
 
 th {
-background-color:#B0C4DE; opacity: 0.8; filter: alpha(opacity=50);
+background-color:#F5F5F5; opacity: 0.8; filter: alpha(opacity=50);
 /*background: #F3F3F3; /* Light grey background */
 font-weight: bold; /* Make sure they're bold */
 }
 
 td {
-background: #B0C4DE; /* Lighter grey background */
+background: #F5F5F5; /* Lighter grey background */
 text-align: center; /* Center our text */
 }
 #menu{
@@ -34,7 +34,7 @@ text-align: center; /* Center our text */
 #main{
 	background-color:white;
 	overflow-y: scroll;
-	background:#778899;
+	background:#CCCCCC;
 }
 #aboutme{
 
@@ -43,7 +43,7 @@ text-align: center; /* Center our text */
 	font-variant: normal;
 	font-weight: 300;
 	line-height: 24px;
-	background-color:#B0C4DE;
+	background-color:#F5F5F5;
 	width:800px;
 	height:610px;
 	text-align:left;
@@ -55,7 +55,7 @@ text-align: center; /* Center our text */
 
 #aboutmeContact{
 
-	background-color:#B0C4DE;
+	background-color:#F5F5F5;
 	width:800px;
 	height:400px;
 	
