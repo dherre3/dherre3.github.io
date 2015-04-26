@@ -4,33 +4,45 @@ color: #333333; /* Lighten up font color */
 font-family: Helvetica, Arial, sans-serif; /* Nicer font */
 width: 700px; 
 /*border-spacing: 0; */
-margin:0 auto;
-border:0px;
+position:fixed;
+z-index:1;
+margin: 0px auto;
+left:0px; right:0px;
+}
+div h1{
+	letter-spacing: 3px;
+	font-size:25px;
+	text-align:center;
 }
 #name{
 	/*position:relative;*/
-	margin-left:35%;
-	letter-spacing: 3px;
-	font-size:35px;
-
+	/*margin-left:35%;*/
+	height:20px;
 	
 }
-td, th { border: 1px solid #CCC;  border-radius: 5px; height: 30px; text-align:center; margin:8px; width:100px } /* Make cells a bit taller */
-
+td, th { border: 1px solid #CCC;  border-radius: 5px; height: 30px;width:100px } /* Make cells a bit taller */
+tr
+{
+	margin:auto;
+}
 th {
 background-color:#F5F5F5; opacity: 0.8; filter: alpha(opacity=50);
 /*background: #F3F3F3; /* Light grey background */
 font-weight: bold; /* Make sure they're bold */
+margin:auto;
 }
 
 td {
 background: #F5F5F5; /* Lighter grey background */
 text-align: center; /* Center our text */
+
 }
-#menu{
+/*#menu{
 		font-family: 'Open Sans';
-	
-}
+		/*position:fixed;
+		margin:auto;
+		padding:auto;
+}*/
 #main{
 	background-color:white;
 	overflow-y: scroll;
@@ -46,19 +58,19 @@ text-align: center; /* Center our text */
 	background-color:#F5F5F5;
 	width:800px;
 	height:610px;
-	text-align:left;
-	margin: auto;
+	margin:0px auto;
 	border:10px;
 	border-color:#333333;
 	border-radius:10px;
 }
 
 #aboutmeContact{
-
+	padding-top:5px;
+	padding-left:10px;
+	display:block;
 	background-color:#F5F5F5;
 	width:800px;
 	height:400px;
-	
 	margin:0 auto;
 	border:10px;
 	border-color:#333333;
@@ -67,24 +79,22 @@ text-align: center; /* Center our text */
 #paraContact{
 	text-align:left;
 	font-size: big;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 300;
-	line-height: 24px;
-	margin-right:50px;
-	margin-left:50px;
+	/*font-style: normal;
+	font-variant: normal;*/	
+	/*font-weight: 300;*/
+	/*line-height: 24px;*/	
+	padding-left:10px;
 
+}
+.circle{
+	margin:30px;
+	
 }
 #circle
 {
 border-radius:50% 50% 50% 50%;  
-position:relative;
-width:300px;
+width:200px;
 height:200px;
-top: 0%;
-left:0%;
-margin-top: -300px;
-margin-left: -250px;
 }
 #foot{
 	text-align:center;
@@ -97,3 +107,21 @@ margin-left: -250px;
 	margin-right:50px;
 	margin-left:50px;
 }
+a{
+	text-decoration:none;
+	
+	
+}
+#empty{
+	height:50px;
+	
+}
+#empty_{
+	
+	height:30px;
+	
+}
+#contactTitle{
+	text-align:left;	
+}
+
