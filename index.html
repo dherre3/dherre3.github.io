@@ -3,9 +3,19 @@
 <head>
 <link rel="stylesheet" type="text/css" href="main.css">
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans"/>
-<link rel="icon" href="http://davidfherrerar.me/favicon.ico" type="image/x-icon">
+<link rel="icon" href="http://davidfherrerar.me/favicon.ico" type="image/x-icon"/>
 <link rel="shortcut icon" type="image/png" href="http://davidfherrerar.me/favicon.png"/>
-<script src="script.js"> </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+      $("#paragraph").click(function(){
+        $("p").fadeTo("fast",0.5)
+    });
+    $("#paragraph").click(function(){
+        $("p").fadeIn();
+    });   
+  });
+</script>
 <title>David Fernando Herrera</title>
 </head>
 
