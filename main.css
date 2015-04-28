@@ -1,37 +1,60 @@
 
+#namePic{
+	float:left;
+	width:300px;
+	display:inline-block;
+	height:360px;
+	
+}
 table { 
 color: #333333; /* Lighten up font color */
-font-family: Helvetica, Arial, sans-serif; /* Nicer font */
+font-family:"proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
 width: 700px; 
 /*border-spacing: 0; */
 position:fixed;
 z-index:1;
 margin: 0px auto;
 left:0px; right:0px;
+
 }
 div h1{
-	letter-spacing: 3px;
-	font-size:25px;
+	letter-spacing: 2px;
+	font-size:20px;
 	text-align:center;
+	
 }
 #name{
 	/*position:relative;*/
 	/*margin-left:35%;*/
-	height:20px;
+	height:50px;
+	
 	
 }
-td, th { border: 1px solid #CCC;  border-radius: 5px; height: 30px;width:100px } /* Make cells a bit taller */
+td, th { border-radius: 5px; height: 30px;width:100px } /* Make cells a bit taller */
+table th th{
+	border-left:1px solid #919191;
+	
+}
 tr
 {
 	margin:auto;
 }
 th {
+font-family:"proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
 background-color:#F5F5F5; opacity: 0.8; filter: alpha(opacity=50);
 /*background: #F3F3F3; /* Light grey background */
 font-weight: bold; /* Make sure they're bold */
 margin:auto;
 }
-
+.paraProjects{
+	font-family:"proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+#container{
+	width:850px;
+	margin:0 auto;
+	
+	
+}
 td {
 background: #F5F5F5; /* Lighter grey background */
 text-align: center; /* Center our text */
@@ -45,7 +68,6 @@ text-align: center; /* Center our text */
 }*/
 #main{
 	background-color:white;
-	overflow-y: scroll;
 	background:#CCCCCC;
 }
 #aboutme{
@@ -55,12 +77,15 @@ text-align: center; /* Center our text */
 	font-weight: 300;
 	line-height: 24px;
 	background-color:#F5F5F5;
-	width:800px;
-	height:610px;
+	width:500px;
+	height:430px;
 	margin:0px auto;
-	border:10px;
-	border-color:#333333;
-	border-radius:10px;
+	border: 3px solid #909090;;
+	border-radius:30px;
+	float:right;
+	display:inline-block;
+	
+	
 }
 
 #aboutmeContact{
@@ -96,18 +121,23 @@ text-align: center; /* Center our text */
 {
 border-radius:50% 50% 50% 50%;  
 width:200px;
-height:200px;
+height:180px;
+border: 3px solid #909090;
 }
-#foot{
+.foot{
+	font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
 	text-align:center;
-	height:30px;
-
+	height:50px;
+	clear:both;
 	border:#333333;
 	}
 	
 #paragraph{
+	font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
 	margin-right:50px;
 	margin-left:50px;
+	overflow-y: scroll;
+	height:380px;
 }
 a{
 	text-decoration:none;
