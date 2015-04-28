@@ -34,7 +34,7 @@ table {
 	border-spacing: 0;
 
 }
-td, th { height: 50px;width:100px;
+td, th { height: 45px;width:100px;
 font-family:"proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
 background-color:#F5F5F5; 
 /*opacity: 0.8; filter: alpha(opacity=50)*/
