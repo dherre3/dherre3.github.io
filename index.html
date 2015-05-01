@@ -6,19 +6,12 @@
 <link rel="icon" href="http://davidfherrerar.me/favicon.ico" type="image/x-icon"/>
 <link rel="shortcut icon" type="image/png" href="http://davidfherrerar.me/favicon.png"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 <script>
 $(document).ready(function(){
-
-  $('table').hover(
-    function(){
-        $(this).addClass('active');
-    },
-    function(){
-        $(this).removeClass('active');
-    }
-  );
-
-});
+    $("div").draggable();
+    
+    });
 </script>
 <title>David Fernando Herrera</title>
 </head>
@@ -41,13 +34,12 @@ $(document).ready(function(){
 <div id="name">
 		<h1>DAVID FERNANDO HERRERA</h1>
 </div>
-<div class="circle" >
+<br>
 	<img src="myphot2.jpg" style="margin:0px auto;display:block" id="circle">
 	<br>
-</div>
-<div><p id="carreer" style="text-align:center;letter-spacing: 1px;font-family:cursive"><em>Software Developer
-	</em><br><em>Computer Scientist 
-		</em><br><em>Physicist</em> <br> </p></div>
+<div style="width:220px"><p id="carreer" style="text-align:center;letter-spacing: 1px;" ><em><p id="soft">Software Developer
+	</p></em><em><p id="compu" style="text-align: center">Computer Scientist </p>
+		</em><em><p id="phys" style="text-align:right">Physicist</p></em> </p></div>
 </div>
 <div id="aboutme">
 	<p id="paragraph">
