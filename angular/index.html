@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+  	<meta charset="utf-8">
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel='stylesheet' type='text/css' href='/resources/tutorial/css/example.css'>
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+     <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script src="//cdn.firebase.com/v0/firebase.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/spin.js/1.2.7/spin.min.js"></script>
+  <script src="sha256.js"></script>
+  <script src="firepano.js"></script>
+   <link rel="stylesheet" type="text/css" href="firepano.css">
+  </head>
+  <body>
+    <div id='messagesDiv'></div>
+    <input type='text' id='nameInput' placeholder='Name'>
+    <input type='text' id='messageInput' placeholder='Message'>
+     <div id="spin"></div>
+  	<h1>Firepano</h1>
+  	<input class="hidden" type="file" accept="image/*" capture="camera" id="file-upload">
+  	<br/>
+  <img class="pano" id="pano" />
+    <script>
+      var myDataRef = new Firebase('https://blazing-inferno-1723.firebaseio.com');
+      $('#messageInput').keypress(function (e) {
+        if (e.keyCode == 13) {
+          var name = $('#nameInput').val();
+          var text = $('#messageInput').val();
+          myDataRef.push({name: name, text: text});
+          $('#messageInput').val('');
+        }
+      });
+      myDataRef.on('child_added', function(snapshot) {
+        var message = snapshot.val();
+        showme(message.name, message.text);
+      });
+      var showme=function(name,text){
+      	document.getElementById('messagesDiv').innerHTML += name+' '+text;
+      };
+      
+     
+    </script>
+    
+  </body>
+</html>

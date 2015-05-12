@@ -1,0 +1,8 @@
+
+angular.module("myApp", []) .controller('MyController', function($scope) {
+  $scope.Person = {
+  	First:"David",
+  	Last:"Herrera"
+  	
+  };
+});
