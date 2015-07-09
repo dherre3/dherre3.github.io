@@ -1,8 +1,0 @@
-
-angular.module("myApp", []) .controller('MyController', function($scope) {
-  $scope.name = {
-  	name:"David",
-  	Last:"Herrera"
-  	
-  };
-});

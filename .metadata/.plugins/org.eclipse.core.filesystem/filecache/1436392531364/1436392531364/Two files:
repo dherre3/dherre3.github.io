@@ -1,0 +1,22 @@
+	Two files: 
+	nightly_training.py
+	get_estimates.py
+
+Dependencies:(not included)
+	holidays package
+	scipy
+	numpy
+	sklearn
+	mat
+
+change the mysql host and password, port whatever
+
+pickle.dumb output for code, its a p file
+
+In the nightly_training.py: replace line, 1170 clf.linear_model.RidgeCV
+by d
+
+First python nighty_training.py
+then run get_estimate.py
+
+If the predictor gives minus 1 it does not predict and there are one of three conditions, or information it does not have.
