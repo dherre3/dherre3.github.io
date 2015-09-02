@@ -5,16 +5,16 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="wholeword"/>
-		<item value="first" key="selection"/>
+		<item value="tab" key="selection"/>
 		<list key="findhistory">
-			<item value="first"/>
-			<item value="FIRST"/>
-			<item value="100"/>
-			<item value="margin"/>
-			<item value="80"/>
-			<item value="/*"/>
-			<item value="5"/>
-			<item value="main"/>
+			<item value="tab"/>
+			<item value="tab-iscon"/>
+			<item value="notif"/>
+			<item value="reply"/>
+			<item value="array2"/>
+			<item value="var"/>
+			<item value="array("/>
+			<item value="array(0"/>
 		</list>
 	</section>
 </section>
