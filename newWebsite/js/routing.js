@@ -4,17 +4,17 @@ var myApp=angular.module('myWebsite');
     $urlRouterProvider.otherwise('/');
     $stateProvider.state('Home', {
         url: '/',
-        templateUrl: 'home/home.html',
+        templateUrl: './views/home/home.html',
         controller: 'HomeController'
     })
     .state('Contants',{
         url:'/Contacts',
-        templateUrl:'contacts/contacts.html',
+        templateUrl:'./views/contacts/contacts.html',
         controller:'ContactController'
     })
     .state('Projects',{
         url:'/Projects',
-        templateUrl:'projects/projects.html',
+        templateUrl:'./views/projects/projects.html',
         controller:'ProjectsController'
     })
 }]);
