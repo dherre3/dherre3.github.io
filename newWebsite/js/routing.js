@@ -7,10 +7,10 @@ var myApp=angular.module('myWebsite');
         templateUrl: './views/home/home.html',
         controller: 'HomeController'
     })
-    .state('Contants',{
+    .state('Contacts',{
         url:'/Contacts',
         templateUrl:'./views/contacts/contacts.html',
-        controller:'ContactController'
+        controller:'ContactsController'
     })
     .state('Projects',{
         url:'/Projects',

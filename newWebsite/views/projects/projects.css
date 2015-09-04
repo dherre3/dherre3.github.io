@@ -1,0 +1,10 @@
+projects{
+	  background: #222 url("http://hqbackground.com/wp-content/uploads/2014/10/jungle-background-21-hd-background-background-and-wallpaper.jpg") no-repeat fixed center;
+}
+.transDiv{
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";       /* IE 8 */
+  filter: alpha(opacity=50);  /* IE 5-7 */
+  -moz-opacity: 0.5;          /* Netscape */
+  -khtml-opacity: 0.5;        /* Safari 1.x */
+  opacity: 0.5;  
+}
