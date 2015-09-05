@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://localhost:8080/#/updates -->
+<html lang="en" hola_ext_inject="disabled"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">.ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
+  <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!--<script src="./js/angular/angular.js"></script>-->
+    <!--<script src="./js/onsenui/build/js/onsenui.js"></script>-->
+     <!--Inckyde angularJS-->
+  <script type="text/javascript" src="./Login_files/angular.min.js"></script>
+  
+  <title>Login</title>
+  <!--Firebase for updates-->
+  <script type="text/javascript" src="./Login_files/firebase.js"></script>
+    <script type="text/javascript" src="./Login_files/angularfire.min.js"></script>
+   <script type="text/javascript" src="./Login_files/angular-animate.min.js"></script>
+  <meta name="description" content="">
+  <meta name="author" content="David Herrera">
+
+
+  <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+  <link rel="stylesheet" href="http://localhost:8080/styles/css/font_awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:8080/styles/css/ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="http://localhost:8080/styles/updatesWebsite.css">
+
+  <link href="http://localhost:8080/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<style type="text/css"></style></head>
+
+<body ng-app="myWebsiteUpdates" class="ng-scope">
+	
+<div>
+  <!-- uiView:  --><div ui-view="" class="ng-scope">
+<div class="container  ng-scope" id="updates">
+<div style="margin-left:10vw">
+<h4 class="ng-binding">Saturday, September 5, 2015</h4>
+<h2>Welcome dherre3, write your updates:</h2>
+</div>
+<div style="width:50vw;margin-left:20vw" align="center">
+<form class="form-group ng-valid ng-dirty ng-valid-parse"> 
+<h4>Title</h4>
+<textarea placeholder="Write a title for the update" type="text" ng-model="title" class="form-control ng-valid ng-dirty ng-valid-parse ng-touched" rows="1"></textarea>
+<h4>Description</h4>
+<textarea placeholder="Write a description for the update" type="text" ng-model="description" class="form-control ng-valid ng-dirty ng-valid-parse ng-touched" rows="3"></textarea>
+<button class="btn btn-primary btn-success btn-lg" ng-disabled="disable" ng-click="updateSubmit()">Submit
+</button>
+</form>
+<br><br>
+<div class="alert alert-success ng-binding ng-hide" role="alert" ng-hide="!alertShow">
+</div>
+
+<button ng-hide="!newAlert" ng-click="newUpdate()" class="btn btn-success btn-small ng-hide">New update</button>
+</div>
+</div></div>
+</div>
+ <footer class="navbar-fixed-bottom" style="text-align:center;display:block;background-color:black;color:grey;height:17px">
+     <p>By David Herrera</p>
+    </footer>
+  <!--Adding ui-router to for routing purposes-->
+  <script src="./Login_files/angular-ui-router.min.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="./Login_files/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./Login_files/bootstrap.min.js"></script>
+   <!--UI bootstrap-->
+    <script src="./Login_files/ui-bootstrap-tpls-0.13.0.min.js"></script>
+    <!--ngAnimate-->
+   
+    <script type="text/javascript" src="./Login_files/myWebsiteUpdates.js"></script>
+
+    
+
+
+</body></html>

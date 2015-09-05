@@ -1,0 +1,32 @@
+.signin{
+	background: #222 url("http://hdw.datawallpaper.com/nature/icy-beach-wide-wallpaper-508481.jpg") no-repeat fixed center;
+	width:100%;
+	height:100vh;
+	color:white;
+}
+
+
+.formDiv{
+	margin:0 20% 0 20%;
+	margin-top:20vh;
+	-moz-border-radius: 10px
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+
+}
+.photo{
+	border-width: 2px;
+	border-color: black;
+	border-image-width: 2px;
+	width:130px;
+	height:auto;
+	-moz-border-radius: 50% / 50%;
+	-webkit-border-radius: 50% / 50%;
+	border-radius: 50% / 50%;
+}
+#updates{
+	background: #222 url("http://hdw.datawallpaper.com/nature/jungle-greens-hd-wallpaper-332338.jpg") no-repeat fixed center;
+	width:100%;
+	height:100vh;
+	color:white;
+}
