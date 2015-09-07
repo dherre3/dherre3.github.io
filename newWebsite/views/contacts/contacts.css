@@ -1,5 +1,73 @@
 .contacts{
-  background: #222 url("http://thinkjarcollective.com/wp-content/uploads/2014/10/Richard-Feynman-quote-on-creativity-1024x1024.jpg") no-repeat fixed center;
+  background: #222 url("http://hdw.datawallpaper.com/abstract/library-322062.jpg") no-repeat fixed center;
   background-size: cover;
   overflow: hidden;
+  color:white;
+}
+.or{
+	color:brown;
+
+}
+
+@media screen and (max-width: 500px) {
+    
+}
+.socialContacts .link {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px dashed white;
+  background-clip: content-box;
+  padding: 2px;
+  transition: .5s;
+  color: #D7D0BE;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-shadow:
+    0 -1px 0 rgba(0, 0, 0, 0.2),
+    0 1px 0 rgba(255, 255, 255, 0.2);
+  font-size: 50px;
+}
+
+.socialContacts.link span {
+  display: block;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.socialContacts .link:hover {
+  padding: 20px;
+  color: white;
+  margin-left: -5px;
+  transform: translateX(10px) rotate(360deg);
+}
+
+.socialContacts .link.google-plus {
+  background-color: black;
+  color: white;
+}
+
+.socialContacts .link.twitter {
+  background-color: #00ACEE;
+  color: white;
+}
+
+.socialContacts .link.facebook {
+  background-color: #3B5998;
+  color: white;
+}
+
+textarea{
+	resize:none;
+}
+.contactsText{
+	background-color: lightyellow;
+
+
 }

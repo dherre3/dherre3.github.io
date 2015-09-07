@@ -1,4 +1,27 @@
-<div class="container contacts"  style="width:100%;height:100vh;margin-top:-20px" >
-<p>Personal Contacts</p>
+<div class="container contacts"  align="center" style="width:100%;height:100vh;margin-top:-20px" >
+
+
+<div style="margin-top:20px" class="container">
+<h2>Write me a message</h2>
+<h4>Title</h4>
+<textarea  ng-readonly="checked" class="contactsText" ng-model="title" style="min-width:200px;max-width:80%;color:black"  rows="1"></textarea><br>
+<h4>Content</h4>
+<textarea ng-readonly="checked" class="contactsText" rows="4" ng-model="content" style="min-width:80%;max-width:80%;max-height:30%;min-height:30%;color:black"></textarea><br>
+<button class="btn btn-warning btn-lg" type="submit" ng-click="sendMessage()" ng-disabled="disableSendButton">Send</button>
+<div  style="width:300px" ng-show="alertOn" class="alert alert-success " role="alert">Message Sent!</div>
+<button class="btn btn-success btn-sm" ng-hide="!newMessageEnable" ng-click="newMessage()">New Message</button>
+
+</div>
+
+<div align="center">
+<h1 class="or">OR</h1>
+</div>
+<div class="container">
+<div align="center" class="socialContacts col-xs-12 col-lg-12 col-md-12 col-sm-12">
+  <a href="https://www.facebook.com/david.f.herrera" class="link facebook" target="_parent"><span class="fa fa-facebook-square"></span></a>
+  <a href="https://ca.linkedin.com/pub/david-herrera/91/74b/489" class="link twitter" target="_parent"><span class="fa fa-linkedin-square"></span></a>
+  <a href="https://github.com/dherre3" class="link google-plus" target="_parent"><span class="fa fa-github"></span></a>
+</div>	
+</div>
 
 </div>

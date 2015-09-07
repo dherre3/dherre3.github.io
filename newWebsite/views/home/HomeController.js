@@ -1,3 +1,5 @@
+var myWeb=angular.module('myWebsite');
+
 myWeb.controller('HomeController', ['$scope', '$timeout','$filter', function ($scope, $timeout,$filter) {
 	//Prevents more info link to display more information from my website
     $scope.moreInfo = false;
@@ -12,20 +14,22 @@ myWeb.controller('HomeController', ['$scope', '$timeout','$filter', function ($s
      * 
      */
      $scope.updates=[];
-    firebaseLink.child('Updates').once('value', function (snapshot) {
+    firebaseLink.once('value', function (snapshot) {
         $timeout(function () {
         	/**
         	 * @memberof firebaseUpdates
         	 * @member {{$scope.updates}}
         	 * @property Date date of the log update
         	 */
-             var firebaseArray=snapshot.val();
+             var firebaseObject=snapshot.val();
+             var updatesObject=firebaseObject.Updates;
+             var firebaseArray=Object.keys(updatesObject);
              for (var i = 0; i < firebaseArray.length; i++) {
                 var message = '';
-                if(firebaseArray[i]!=null){
-                    firebaseArray[i].Date=new Date(firebaseArray[i].Date);
-                    console.log(firebaseArray[i].Date);
-                    var dateUpdate=firebaseArray[i].Date;
+                if(updatesObject[firebaseArray[i]]!=null){
+                    updatesObject[firebaseArray[i]].Date=$filter('formatDate')(updatesObject[firebaseArray[i]].Date);
+                    console.log(updatesObject[firebaseArray[i]].Date);
+                    var dateUpdate=updatesObject[firebaseArray[i]].Date;
                     var temp = Math.floor((new Date() - dateUpdate) / (1000));
                     message = temp + ' sec';
                 if(temp>59){
@@ -41,8 +45,8 @@ myWeb.controller('HomeController', ['$scope', '$timeout','$filter', function ($s
                     }
                 }
 
-                firebaseArray[i].Timestamp = message;
-                $scope.updates.push(firebaseArray[i]); 
+                updatesObject[firebaseArray[i]].Timestamp = message;
+                $scope.updates.push(updatesObject[firebaseArray[i]]); 
                 }
              };
              $scope.updates=$filter('orderBy')($scope.updates,'Date',true);

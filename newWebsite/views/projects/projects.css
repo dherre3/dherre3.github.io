@@ -1,5 +1,7 @@
-projects{
-	  background: #222 url("http://hqbackground.com/wp-content/uploads/2014/10/jungle-background-21-hd-background-background-and-wallpaper.jpg") no-repeat fixed center;
+.projects{
+	background: #222 url("http://cdn01.wallconvert.com/_media/wallpapers_1280x800/1/2/work-desk-14949.jpg") no-repeat fixed center;
+	width:100%;
+	height:100vh;
 }
 .transDiv{
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";       /* IE 8 */
