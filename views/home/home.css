@@ -71,5 +71,6 @@
   -moz-opacity: 0.8;          /* Netscape */
   -khtml-opacity: 0.8;        /* Safari 1.x */
   opacity: 0.8;  
+  z-index:0;
 }
 
