@@ -7,7 +7,7 @@
     behavior: url(PIE.htc); /* remove if you don't care about IE8 */
     width: 200px;
     height: 200px;
-    background: url('.img/profile-pic.jpeg') no-repeat;
+    background: url('http://davidfherrerar.me/img/profile-pic.jpeg') no-repeat;
     background-size: cover;
 }
 .circleBaseOutter {
