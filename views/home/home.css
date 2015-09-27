@@ -9,6 +9,7 @@
     height: 200px;
     background: url('http://davidfherrerar.me/img/profile-pic.jpeg') no-repeat;
     background-size: cover;
+    background-position: center;
 }
 .circleBaseOutter {
     border-radius: 50%;

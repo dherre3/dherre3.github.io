@@ -17,4 +17,14 @@ var myApp=angular.module('myWebsite');
         templateUrl:'./views/projects/projects.html',
         controller:'ProjectsController'
     })
+    .state('Portafilio',{
+        url:'/Projects',
+        templateUrl:'./views/projects/projects.html',
+        controller:'ProjectsController'
+    })
+    .state('Documents',{
+        url:'/Projects',
+        templateUrl:'./views/projects/projects.html',
+        controller:'ProjectsController'
+    })
 }]);
