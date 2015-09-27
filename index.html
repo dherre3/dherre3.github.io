@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="./styles/css/ionicons/css/ionicons.min.css">
   <link rel="stylesheet" href="./views/home/home.css">
   <link href="./lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="./lib/styles/animate.css" rel="stylesheet">
+  <link rel="stylesheet" href="./lib/styles/animate.css">
   <link href="./styles/style.css" rel="stylesheet">
   <link href="./views/contacts/contacts.css" rel="stylesheet">
   <link href="./views/projects/projects.css" rel="stylesheet">
@@ -32,8 +32,8 @@
 </head>
 
 <body ng-app="myWebsite"  ng-controller="MainController">
-<div class="modalOnsen" ng-show="showMenu">
-  <div class="modal__contentOnsen">
+<div class="modalOnsenUI" ng-show="showMenu">
+  <div class="modalOnseUIContent">
     <div class="my-closeMenu" >
     <a href ng-click="closeModal()"><i class="ion-close-round my-custom-icon"></i></a> 
   </div>
@@ -43,7 +43,7 @@
   </ul>
   </div>
 </div>
-<div class="open-menu">
+<div class="open-menu" ng-class="rotateClass">
   <div style="margin-left:20px" >
     <a href ng-click="openModal()"><i class="ion-navicon-round my-custom-icon" id="rotate"></i></a>  
   </div>
@@ -52,7 +52,7 @@
 <div style="margin-top:20px">
 <div ui-view></div>
 </div>
- <footer class="navbar-fixed-bottom" style="text-align:center;display:block;background:rgba(0,0,0,0.5);color:grey;height:17px">
+ <footer class="navbar-fixed-bottom" style="text-align:center;display:block;background:rgba(0,0,0,0.5);color:#2B6197;height:17px">
      <p>By David Herrera</p>
     </footer>
   <!--Adding ui-router to for routing purposes-->

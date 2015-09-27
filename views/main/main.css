@@ -25,7 +25,7 @@
 *My close menu
 *
 */
-.modalOnsen {
+.modalOnsenUI {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -63,7 +63,7 @@
   display: table;
   z-index: 2147483647;
 }
-.modal__contentOnsen {
+.modalOnseUIContent {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;

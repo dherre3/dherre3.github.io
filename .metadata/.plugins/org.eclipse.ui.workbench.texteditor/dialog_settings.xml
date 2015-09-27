@@ -2,19 +2,19 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="wholeword"/>
-		<item value="open-menu" key="selection"/>
+		<item value="ng-class" key="selection"/>
 		<list key="findhistory">
-			<item value="open-menu"/>
-			<item value="myPane"/>
-			<item value="myPen"/>
-			<item value="content"/>
-			<item value="overflow"/>
-			<item value="myPanel"/>
-			<item value="my-panel"/>
-			<item value="image"/>
+			<item value="ng-class"/>
+			<item value="ng-class=&quot;rotateClass&quot;"/>
+			<item value="rotateClass"/>
+			<item value="rotate"/>
+			<item value="https://muhc.ca/sites/default/files/Cedars%20Cancer%20Centre_exterior_Block%20D_4.JPG"/>
+			<item value="fadeup"/>
+			<item value=".custom-icon {&#x0A;  font-size: 40px;&#x0A;  opacity:0.7;&#x0A;  &#x0A;}"/>
+			<item value="my-close"/>
 		</list>
 	</section>
 </section>
