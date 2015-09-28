@@ -8,10 +8,12 @@ myWeb.controller('MainController', ['$anchorScroll', '$location', '$scope','$sta
 	$scope.closeModal=function(){
 		$scope.animationMenu=='animated zoomOutUp';
 		$scope.rotateClass="animated fadeInDown";
+		$scope.footerAnimation="animated fadeInUp"
 		$scope.showMenu=false;
 	}
 	$scope.openModal=function(){
 		$scope.rotateClass="animated fadeOutUp";
+		$scope.footerAnimation="animated fadeOutDown"
 		$scope.animationMenu=='animated bounce';
 		$scope.showMenu=true;
 	}
@@ -20,6 +22,7 @@ myWeb.controller('MainController', ['$anchorScroll', '$location', '$scope','$sta
 		$scope.showMenu=false;
 		$state.go($scope.menuOptions[index]);
       	$scope.rotateClass="animated fadeInDown";
+      	$scope.footerAnimation="animated fadeInUp"
     };
 
 
