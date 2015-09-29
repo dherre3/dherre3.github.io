@@ -36,16 +36,16 @@ myWeb.controller('MainController', function ($scope) {
 
 });
 
-  myApp.filter('formatDate',function(){
-    return function(str) {
-        if(typeof str==='string'){
-          var a = str.split(/[^0-9]/);
-          var d=new Date (a[0],a[1]-1,a[2],a[3],a[4],a[5] );
-        return d;
+myWeb.filter('formatDate',function(){
+  return function(str) {
+      if(typeof str==='string'){
+        var a = str.split(/[^0-9]/);
+        var d=new Date (a[0],a[1]-1,a[2],a[3],a[4],a[5] );
+      return d;
 
-        }
       }
-  });
+    }
+});
 myWeb.filter('dateToFirebase',function(){
     return function(date){
       var month=date.getMonth()+1;
