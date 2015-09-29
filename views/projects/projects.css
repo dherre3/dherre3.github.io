@@ -16,6 +16,8 @@
 .projectDiv{
 	border:1px solid grey;
 	background-color:white;
+	border-radius:5px;
+	height:70vh;
 
 
 }
@@ -23,7 +25,12 @@
 .project-title{
 	font-size:18px;
 	text-align:center;
+	color:#2B6197;
 }
 .project-title:hover{
+	text-decoration: none;
+}
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+.decoLinks a:hover{
 	text-decoration: none;
 }
