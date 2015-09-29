@@ -41,6 +41,9 @@ myWeb.controller('HomeController', ['$scope', '$timeout','$filter', function ($s
                         if (temp > 24) {
                             temp = Math.floor(temp / 24);
                             message = temp + ' days';
+                            if(temp>30){
+                                message=dateUpdate.getDate()+'/'+dateUpdate.getMonth()+'/'+dateUpdate.getFullYear();
+                            }
                         }
                     }
                 }

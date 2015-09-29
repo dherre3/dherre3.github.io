@@ -1,7 +1,9 @@
 .projects{
-	background: #222 url("http://cdn01.wallconvert.com/_media/wallpapers_1280x800/1/2/work-desk-14949.jpg") no-repeat fixed center;
-	width:100%;
-	height:100vh;
+    background: #222 url("http://25.media.tumblr.com/a408ad9af259cf827ed4599d60bcb0a9/tumblr_myebwtELvb1st5lhmo1_1280.jpg");
+	background-size:cover;
+	background-position: center; 
+	background-repeat: repeat-y;
+
 }
 .transDiv{
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";       /* IE 8 */
@@ -9,4 +11,19 @@
   -moz-opacity: 0.5;          /* Netscape */
   -khtml-opacity: 0.5;        /* Safari 1.x */
   opacity: 0.5;  
+}
+
+.projectDiv{
+	border:1px solid grey;
+	background-color:white;
+
+
+}
+
+.project-title{
+	font-size:18px;
+	text-align:center;
+}
+.project-title:hover{
+	text-decoration: none;
 }
