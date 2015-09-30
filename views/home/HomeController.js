@@ -50,6 +50,7 @@ myWeb.controller('HomeController', ['$scope', '$timeout','$filter', function ($s
 
                 updatesObject[firebaseArray[i]].Timestamp = message;
                 $scope.updates.push(updatesObject[firebaseArray[i]]); 
+                console.log(updatesObject[firebaseArray[i]].Content);
                 }
              };
              $scope.updates=$filter('orderBy')($scope.updates,'Date',true);

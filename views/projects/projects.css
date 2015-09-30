@@ -23,14 +23,22 @@
 }
 
 .project-title{
-	font-size:18px;
+	font-size:26px;
 	text-align:center;
 	color:#2B6197;
 }
 .project-title:hover{
 	text-decoration: none;
 }
-.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+a {
+ cursor: pointer;
+ }
+ 
 .decoLinks a:hover{
 	text-decoration: none;
+}
+
+hr { margin: 10px 0 10px 0; }
+ul {
+	padding-left:10px;
 }

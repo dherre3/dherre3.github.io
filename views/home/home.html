@@ -96,8 +96,7 @@
                   <span class="timeline-name">{{update.Title}}</span>
                   <span class="timeline-id"><a href="https://github.com/dherre3" >@dherre3</a></span>
                 </div>
-                <div class="timeline-message">
-                	{{update.Content}}
+                <div class="timeline-message" ng-bind-html="update.Content| to_trusted">
                 </div>
             </div>
   		</div>
