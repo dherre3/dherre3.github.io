@@ -18,7 +18,7 @@ myApp.controller('ContactsController',function($scope,$filter){
 
 
 	$scope.sendMessage=function(){
-		var ref=new Firebase('https://blazing-inferno-1723.firebaseio.com/Messages');
+		var ref=new Firebase('https://blazing-inferno-1723.firebaseio.com//Website/Messages');
 		ref.push({
 			'title':$scope.title,
 			'content':$scope.content,

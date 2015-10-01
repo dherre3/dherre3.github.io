@@ -4,7 +4,7 @@ myWeb.controller('HomeController', ['$scope', '$timeout','$filter', function ($s
 	//Prevents more info link to display more information from my website
     $scope.moreInfo = false;
     $scope.shownUpdates=2;
-    var firebaseLink = new Firebase('https://blazing-inferno-1723.firebaseio.com'); //Creates link to firebase database and grabs all events
+    var firebaseLink = new Firebase('https://blazing-inferno-1723.firebaseio.com/Website'); //Creates link to firebase database and grabs all events
     
     /**
      * @methodof HomeController
@@ -14,7 +14,7 @@ myWeb.controller('HomeController', ['$scope', '$timeout','$filter', function ($s
      * 
      */
      $scope.updates=[];
-    firebaseLink.once('value', function (snapshot) {
+    firebaseLink.child('Updates').on('value', function (snapshot) {
         $timeout(function () {
         	/**
         	 * @memberof firebaseUpdates
@@ -22,7 +22,8 @@ myWeb.controller('HomeController', ['$scope', '$timeout','$filter', function ($s
         	 * @property Date date of the log update
         	 */
              var firebaseObject=snapshot.val();
-             var updatesObject=firebaseObject.Updates;
+             console.log(firebaseObject);
+             var updatesObject=firebaseObject;
              var firebaseArray=Object.keys(updatesObject);
              for (var i = 0; i < firebaseArray.length; i++) {
                 var message = '';
