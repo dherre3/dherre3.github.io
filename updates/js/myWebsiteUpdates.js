@@ -18,7 +18,55 @@ myAppWebsite.config(['$urlRouterProvider','$stateProvider', function ($urlRouter
 	.state('updates',{
 		url:'/updates',
 		templateUrl:'views/updates.html',
-		controller:'UpdatesController',
+		controller:'UpdatesController'
+		resolve: {
+	      // controller will not be loaded until $waitForAuth resolves
+	      // Auth refers to our $firebaseAuth wrapper in the example above
+	      "currentAuth": ["Auth", function(Auth) {
+	        // $waitForAuth returns a promise so the resolve waits for it to complete
+	        return Auth.$requireAuth();
+    	  }]
+  	}
+	}).state('updates.manage',{
+		url:'/manage',
+		templateUrl:'views/manage-updates.html',
+		controller:'ManageUpdatesController'
+		resolve: {
+	      // controller will not be loaded until $waitForAuth resolves
+	      // Auth refers to our $firebaseAuth wrapper in the example above
+	      "currentAuth": ["Auth", function(Auth) {
+	        // $waitForAuth returns a promise so the resolve waits for it to complete
+	        return Auth.$requireAuth();
+    	  }]
+  	}
+	}).state('updates.add',{
+		url:'/add',
+		templateUrl:'views/add-updates.html',
+		controller:'AddUpdatesController'
+		resolve: {
+	      // controller will not be loaded until $waitForAuth resolves
+	      // Auth refers to our $firebaseAuth wrapper in the example above
+	      "currentAuth": ["Auth", function(Auth) {
+	        // $waitForAuth returns a promise so the resolve waits for it to complete
+	        return Auth.$requireAuth();
+    	  }]
+  	}
+	}).state('updates.projects',{
+		url:'/projects',
+		templateUrl:'views/manage-projects.html',
+		controller:'ManageProjectsController'
+		resolve: {
+	      // controller will not be loaded until $waitForAuth resolves
+	      // Auth refers to our $firebaseAuth wrapper in the example above
+	      "currentAuth": ["Auth", function(Auth) {
+	        // $waitForAuth returns a promise so the resolve waits for it to complete
+	        return Auth.$requireAuth();
+    	  }]
+  	}
+	}).state('updates.profile',{
+		url:'/profile',
+		templateUrl:'views/manage-profile.html',
+		controller:'ManageProfileController'
 		resolve: {
 	      // controller will not be loaded until $waitForAuth resolves
 	      // Auth refers to our $firebaseAuth wrapper in the example above
@@ -60,7 +108,7 @@ myAppWebsite.controller('LoginUpdatesController',function($scope,$state, Auth){
 				console.log(error);
 			}else{
 				console.log(authData);
-				$state.go('updates');
+				$state.go('updates.add');
 			}
 
 		});
@@ -90,7 +138,31 @@ myAppWebsite.filter('dateToFirebase',function(){
     }
 
   });
-myAppWebsite.controller('UpdatesController',function($filter, $scope){
+
+myAppWebsite.controller('ManageUpdatesController',['$scope','$filter','$timeout',function($scope,$filter,$timeout){
+	var ref=new Firebase('https://blazing-inferno-1723.firebaseio.com/Website');
+	$scope.updates={};
+	ref.child('Updates').on('child_added',function(snapshot){
+		var child=snapshot.val();
+		$timeout(function(){
+			$scope.updates[snapshot.key()]=child;
+		})
+	});
+	
+
+
+}]);
+myAppWebsite.filter('formatDate',function(){
+	return function(str) {
+    if(typeof str==='string'){
+      var a = str.split(/[^0-9]/);
+      //for (i=0;i<a.length;i++) { alert(a[i]); }
+      var d=new Date (a[0],a[1]-1,a[2],a[3],a[4],a[5] );
+    return d;
+    }
+  }
+});
+myAppWebsite.controller('AddUpdatesController',function($filter, $scope){
 	$scope.today=new Date();
 	$scope.alertShow=false;
 	$scope.title='';
@@ -111,7 +183,7 @@ myAppWebsite.controller('UpdatesController',function($filter, $scope){
 			objectUpdate.Content=$scope.description;
 			objectUpdate.Title=$scope.title;
 			objectUpdate.Date=$filter('dateToFirebase')(new Date());
-			var ref = new Firebase("https://blazing-inferno-1723.firebaseio.com/");
+			var ref = new Firebase("https://blazing-inferno-1723.firebaseio.com/Website");
 			ref.child('Updates').push(objectUpdate);
 			$scope.alertMessage="Update Sent!";
 			$scope.alertShow=true;
@@ -129,3 +201,10 @@ myAppWebsite.controller('UpdatesController',function($filter, $scope){
 
 
 });
+
+
+myAppWebsite.controller('UpdatesController',['$scope',function($scope){}]);
+
+myAppWebsite.controller('ManageProfileController',['$scope',function($scope){}]);
+myAppWebsite.controller('ManageProjectsController',['$scope',function($scope){}]);
+ 

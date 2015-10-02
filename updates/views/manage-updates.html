@@ -1,0 +1,46 @@
+<div ng-controller="ManageUpdatesController">
+<div style="overflow-y:scroll" id="manage">
+<div class="container-fluid" style="margin-top:30px">
+<div class="col-xs-7">
+	<div ng-repeat="(key, value) in updates"class="panel panel-default">
+		<div class="panel-heading">
+		<div class="row">
+		<div class="col-xs-11">
+		<h4>{{value.Title}}</h4>
+		</div>
+		<div class="col-xs-1">
+		
+		<div class="col-xs-12">X</div>
+		</div>
+		</div>
+		</div>
+		<div class="panel-body">
+		<div class="col-xs-12" style="text-align:center;color:grey">{{value.Date|formatDate|date:"EEEE MMM d 'at' hh:mm"}}</div>
+		<hr>
+			<p>{{value.Content}}</p>
+		</div>
+	</div>
+</div>
+<div class="col-xs-5">
+<div class="panel panel-default" style="position:fixed;top:100;height:70vh;width:40vw;right:200">
+<div class="panel-body" style="height:70vh" align="center">
+<span style="color:grey">{{updateEdit.Date}}</span>
+<h3>Title Of Update</h3>
+<textarea class="textarea" style="width:95%" rows="1" placeholder="Title"></textarea>
+<br>
+<h3>Content Of Update</h3>
+<textarea class="textarea" style="width:95%" rows="5" placeholder="Content"></textarea>
+<br>
+<br>
+<div class="col-xs-6">
+<button class="btn btn-success btn-lg">Submit</button>
+</div>
+<div class="col-xs-6">
+<button class="btn btn-danger btn-lg">Delete</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

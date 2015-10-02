@@ -1,24 +1,11 @@
-
-<div class="container " id="updates" >
-<div style="margin-left:10vw">
-<h4>{{today|date:'fullDate'}}</h4>
-<h2>Welcome dherre3, write your updates:</h2>
+<div ng-controller="UpdatesController">
+<div style="margin-top:10px">
+<ul class="nav nav-tabs">
+  <li role="presentation"><a ui-sref="updates.add" >Write Update</a></li>
+  <li role="presentation"><a ui-sref="updates.manage">Manage Updates</a></li>
+  <li role="presentation"><a ui-sref="updates.projects">Manage Projects</a></li>
+  <li role="presentation"><a ui-sref="updates.profile">Manage Profile</a></li>
+</ul>
 </div>
-<div style="width:50vw;margin-left:20vw" align="center">
-<form class="form-group" > 
-<h4>Title</h4>
-<textarea  placeholder="Write a title for the update" type="text" ng-model="title" class="form-control" rows="1">
-</textarea>
-<h4>Description</h4>
-<textarea  placeholder="Write a description for the update" type="text" ng-model="description" class="form-control" rows="3">
-</textarea>
-<button class="btn btn-primary btn-success btn-lg" ng-disabled="disable" ng-click="updateSubmit()">Submit
-</button>
-</form>
-<br><br>
-<div class="alert alert-success" role="alert" ng-hide="!alertShow">{{alertMessage}}
-</div>
-
-<button ng-hide="!newAlert" ng-click="newUpdate()" class="btn btn-success btn-small">New update</button>
-</div>
+<div ui-view></div>
 </div>
