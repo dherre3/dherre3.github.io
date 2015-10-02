@@ -5,15 +5,12 @@ var myApp=angular.module('myWebsite');
 myApp.controller('ProjectsController',function($scope,$timeout,$location){
 	var ref=new Firebase('https://blazing-inferno-1723.firebaseio.com/Website/Projects');
 	$scope.projects=[];
-	ref.on('value',function(snapshot){
+	ref.on('child_added',function(snapshot){
 		var projects=snapshot.val();
+		
 		console.log(projects);
 		$timeout(function(){
-			var keysProjects=Object.keys(projects);
-			for (var i = 0; i < keysProjects.length; i++) {
-				$scope.projects.push(projects[keysProjects[i]]);
-
-			};
+			$scope.projects.push(projects);
 		});
 	});
 	$scope.goToProject=function(index){
