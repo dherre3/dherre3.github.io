@@ -24,12 +24,10 @@
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingTwo">
       <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" onclick="return false;" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Object Oriented Programming
-        </a>
+          Object Oriented Programming     
       </h4>
     </div>
-    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+    <div class="panel-body" >
       	<div class="list-group">
 			  <a ng-repeat="project in projects"  ng-click="goToProject($index+1)" ng-show="project.Type=='Object Oriented Programming'" class="list-group-item"> {{project.Title}}</a>
 		</div>
@@ -38,12 +36,10 @@
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingThree">
       <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" onclick="return false;" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
           Other
-        </a>
       </h4>
     </div>
-    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+    <div class="panel-body">
       	<div class="list-group">
 			  <a ng-repeat="project in projects" ng-click="goToProject($index+1)" ng-show="project.Type!='Object Oriented Programming'&&project.Type!='Web Development'" class="list-group-item"> {{project.Title}}</a>
 		</div>
@@ -65,11 +61,11 @@
 			</div>
 			<div class="row" style="padding:0">
 
-			<div class="hidden-xs col-sm-4" style="margin-left:40px;margin-top:20px"> 
+			<div class="hidden-xs col-sm-3" style="margin-left:40px;margin-top:20px"> 
 
 				<img class="img-responsive" ng-src="{{project.ImagePath}}">
 			</div>
-			<div class="col-xs-7" style="padding:0">
+			<div class="col-xs-8" style="padding:0">
 				<hr>
 				<div style="height:40vh;overflow-y:scroll">
 				<div class="col-xs-3">
