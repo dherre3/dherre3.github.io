@@ -5,12 +5,28 @@ myAppWebsite.config(['$urlRouterProvider','$stateProvider', function ($urlRouter
 	$stateProvider.state('login',{
 		url:'/',
 		templateUrl:'views/signin.html',
-		controller:'LoginUpdatesController'
+		controller:'LoginUpdatesController',
+		resolve: {
+      // controller will not be loaded until $waitForAuth resolves
+      // Auth refers to our $firebaseAuth wrapper in the example above
+      "currentAuth": ["Auth", function(Auth) {
+        // $waitForAuth returns a promise so the resolve waits for it to complete
+        return Auth.$waitForAuth();
+      }]
+  }
 	})
 	.state('updates',{
 		url:'/updates',
 		templateUrl:'views/updates.html',
-		controller:'UpdatesController'
+		controller:'UpdatesController',
+		resolve: {
+	      // controller will not be loaded until $waitForAuth resolves
+	      // Auth refers to our $firebaseAuth wrapper in the example above
+	      "currentAuth": ["Auth", function(Auth) {
+	        // $waitForAuth returns a promise so the resolve waits for it to complete
+	        return Auth.$requireAuth();
+    	  }]
+  	}
 	})
 
 
@@ -18,7 +34,7 @@ myAppWebsite.config(['$urlRouterProvider','$stateProvider', function ($urlRouter
 }]);
 myAppWebsite.factory("Auth", ["$firebaseAuth",
   function($firebaseAuth) {
-    var ref = new Firebase("https://docs-sandbox.firebaseio.com");
+    var ref = new Firebase("https://blazing-inferno-1723.firebaseio.com");
     return $firebaseAuth(ref);
   }
 ]);

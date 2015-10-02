@@ -21,7 +21,15 @@
 
 
 }
+.projectContentDiv{
+	border:1px solid grey;
+	background-color:white;
+	border-radius:5px;
+	height:435px;
+	margin-top:20px;
+	margin-bottom:20px;
 
+}
 .project-title{
 	font-size:26px;
 	text-align:center;
