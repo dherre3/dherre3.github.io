@@ -10,38 +10,36 @@
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
       <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion"  onclick="return false;"  href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
           Web Development
-        </a>
       </h4>
     </div>
     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
       	<div class="list-group">
-			  <a ng-repeat="project in projects" ng-click="goToProject($index+1)" ng-show="project.Type=='Web Development'" class="list-group-item"> {{project.Title}}</a>
+			  <a ng-repeat="project in projects" ng-click="goToProject($index+1)" ng-class="activeClass[$index+1]" ng-show="project.Type=='Web Development'" class="list-group-item"> {{project.Title}}</a>
 		</div>
     </div>
   </div>
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingTwo">
       <h4 class="panel-title">
-          Object Oriented Programming     
+          Object Oriented Programming
       </h4>
     </div>
-    <div class="panel-body" >
+    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
       	<div class="list-group">
-			  <a ng-repeat="project in projects"  ng-click="goToProject($index+1)" ng-show="project.Type=='Object Oriented Programming'" class="list-group-item"> {{project.Title}}</a>
+			  <a ng-repeat="project in projects"  ng-click="goToProject($index+1)" ng-class="activeClass[$index+1]" ng-show="project.Type=='Object Oriented Programming'" class="list-group-item"> {{project.Title}}</a>
 		</div>
     </div>
   </div>
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingThree">
-      <h4 class="panel-title">
+      <h4 class="panel-title"> 
           Other
       </h4>
     </div>
-    <div class="panel-body">
+    <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
       	<div class="list-group">
-			  <a ng-repeat="project in projects" ng-click="goToProject($index+1)" ng-show="project.Type!='Object Oriented Programming'&&project.Type!='Web Development'" class="list-group-item"> {{project.Title}}</a>
+			  <a ng-repeat="project in projects" ng-click="goToProject($index+1)" ng-class="activeClass[$index+1]" ng-show="project.Type!='Object Oriented Programming'&&project.Type!='Web Development'" class="list-group-item"> {{project.Title}}</a>
 		</div>
     </div>
   </div>
@@ -55,17 +53,19 @@
 	<div class="col-xs-12 col-sm-9" style="margin-top:100px;padding-left:3px">
 		<div class="panel panel-default" style="overflow-y:scroll;width:100%;height:75vh;background:rgba(0,0,0,0.7)" >
 		<div class="panel-body" style="padding-top:0px;padding-bottom:0px">
-		<div ng-repeat="project in projects" id="anchor{{$index+1}}"class="projectContentDiv animated fadeIn">
+		<div style="margin-top:1px" ng-repeat="project in projects" id="anchor{{$index+1}}">
+		<br>
+		<div class="projectContentDiv animated fadeIn">
 
 			<div class="cols-xs-12 project-title"><strong>{{project.Title}}</strong>
 			</div>
 			<div class="row" style="padding:0">
 
-			<div class="hidden-xs col-sm-3" style="margin-left:40px;margin-top:20px"> 
+			<div class="hidden-xs col-sm-4" style="margin-left:40px;margin-top:20px"> 
 
-				<img class="img-responsive" ng-src="{{project.ImagePath}}">
+				<img style="width:85%" class="img-responsive" ng-src="{{project.ImagePath}}">
 			</div>
-			<div class="col-xs-8" style="padding:0">
+			<div class="col-xs-7" style="padding:0">
 				<hr>
 				<div style="height:40vh;overflow-y:scroll">
 				<div class="col-xs-3">
@@ -123,8 +123,9 @@
 			</div>
 
 			</div>
+			</div>
 
-			<div style="margin-bottom:20px">
+			<div style="margin-bottom:10px">
 			</div>
 		</div>
 

@@ -7,13 +7,16 @@ myApp.controller('ProjectsController',function($scope,$timeout,$location){
 	$scope.projects=[];
 	ref.on('child_added',function(snapshot){
 		var projects=snapshot.val();
-		
+
 		console.log(projects);
 		$timeout(function(){
 			$scope.projects.push(projects);
 		});
 	});
+	$scope.previous=1;
+	$scope.activeClass={};
 	$scope.goToProject=function(index){
+
 		var newHash = 'anchor' + index;
       	if ($location.hash() !== newHash) {
         	// set the $location.hash to `newHash` and
