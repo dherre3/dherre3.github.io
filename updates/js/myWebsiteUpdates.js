@@ -18,7 +18,7 @@ myAppWebsite.config(['$urlRouterProvider','$stateProvider', function ($urlRouter
 	.state('updates',{
 		url:'/updates',
 		templateUrl:'views/updates.html',
-		controller:'UpdatesController'
+		controller:'UpdatesController',
 		resolve: {
 	      // controller will not be loaded until $waitForAuth resolves
 	      // Auth refers to our $firebaseAuth wrapper in the example above
@@ -30,7 +30,7 @@ myAppWebsite.config(['$urlRouterProvider','$stateProvider', function ($urlRouter
 	}).state('updates.manage',{
 		url:'/manage',
 		templateUrl:'views/manage-updates.html',
-		controller:'ManageUpdatesController'
+		controller:'ManageUpdatesController',
 		resolve: {
 	      // controller will not be loaded until $waitForAuth resolves
 	      // Auth refers to our $firebaseAuth wrapper in the example above
@@ -42,7 +42,7 @@ myAppWebsite.config(['$urlRouterProvider','$stateProvider', function ($urlRouter
 	}).state('updates.add',{
 		url:'/add',
 		templateUrl:'views/add-updates.html',
-		controller:'AddUpdatesController'
+		controller:'AddUpdatesController',
 		resolve: {
 	      // controller will not be loaded until $waitForAuth resolves
 	      // Auth refers to our $firebaseAuth wrapper in the example above
@@ -54,7 +54,7 @@ myAppWebsite.config(['$urlRouterProvider','$stateProvider', function ($urlRouter
 	}).state('updates.projects',{
 		url:'/projects',
 		templateUrl:'views/manage-projects.html',
-		controller:'ManageProjectsController'
+		controller:'ManageProjectsController',
 		resolve: {
 	      // controller will not be loaded until $waitForAuth resolves
 	      // Auth refers to our $firebaseAuth wrapper in the example above
@@ -66,7 +66,7 @@ myAppWebsite.config(['$urlRouterProvider','$stateProvider', function ($urlRouter
 	}).state('updates.profile',{
 		url:'/profile',
 		templateUrl:'views/manage-profile.html',
-		controller:'ManageProfileController'
+		controller:'ManageProfileController',
 		resolve: {
 	      // controller will not be loaded until $waitForAuth resolves
 	      // Auth refers to our $firebaseAuth wrapper in the example above
