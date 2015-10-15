@@ -8,6 +8,7 @@
  * Controller of the 2048App it has the login of all the games
  * IMPROVEMENTS: There must be a solution where the add and slide funtions are done in the same 
  *loop rather than in two separate ones. 
+ *Obvious UI improvements.
  *Solve it so that I can have a unique gradient of colors.
  */
 angular.module('2048App')
@@ -613,10 +614,10 @@ $scope.style=function(number)
 	var string='#00BFF6';
 	var sqrt=Math.sqrt(number);
 	string='rgb('+(85+number%256)+', '+number%256+', '+number%256+')';
-	if((85+number)/256==1){
-		string='rgb('+number%256+', '+(105+number%256)+', '+number%256+')';
-	}else if((85+number)/256==2){
-		string='rgb('+number%256+', '+number%256+', '+(105+number%256)+')';
+	if((85+number)/256>=1){
+		string='rgb('+number%256+', '+(85+number%256)+', '+number%256+')';
+	}else if((85+number)/256>=2){
+		string='rgb('+number%256+', '+number%256+', '+(85+number%256)+')';
 	}
 	return string;
 	/*if(number<10){
