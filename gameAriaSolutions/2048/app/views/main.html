@@ -1,0 +1,45 @@
+<h1>2048 - Game Implemented by David Herrera</h1>
+<strong>Features</strong>
+<ul>
+  <li>Re-initialize game</li>
+  <li>Game history, go back to any one step</li>
+  <li>Colors</li>
+  <li>Upcoming: save game and come back later. Has
+  to be in the same machine</li>
+</ul>
+<div class="row marketing" align="center">
+
+<button class="btn btn-success btn-lg" style="margin-left:40px" ng-click="restart()">Restart</button>
+<br>
+<br>
+  <table >
+  <tr ng-repeat="i in [0,1,2,3]" >
+    <th ng-repeat="j in [0,1,2,3]" style="font-size:50px;padding-left:50px;border:1px solid grey;border-radius:2px;color:white" ng-style="{'background-color': style(gameArray[i][j])}">
+      &nbsp;<span ng-show="gameArray[i][j]!=0">{{gameArray[i][j]}}</span>
+    </th>
+  </tr>
+  </table>
+  <hr>
+</div>
+<uib-accordion ng-show="prev.length>0">
+    <uib-accordion-group is-open="status.open">
+      <uib-accordion-heading>
+        <h3>Game History</h3> Click on any step to go back <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+      </uib-accordion-heading>
+<div ng-repeat="pr in prev" align="center">
+<hr>
+<a href ng-click="goBackToStep(pr)">
+ <table >
+ 
+  <tr ng-repeat="i in [0,1,2,3]">
+    <th ng-repeat="j in [0,1,2,3]" align="center" style="font-size:50px;padding-left:50px;border:1px solid grey;border-radius:2px;color:white" ng-style="{'background-color': style(pr[i][j])}">
+      {{pr[i][j]}}
+    </th>
+  </tr>
+
+  <br>
+  </table>
+  </a>
+  </div>
+    </uib-accordion-group>
+  </uib-accordion>
