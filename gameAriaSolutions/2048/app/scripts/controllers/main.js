@@ -23,13 +23,19 @@ angular.module('2048App')
 
   	$scope.goBackToStep=function(step)
   	{
+  		console.log(step);
   		$timeout(function(){
-  			$scope.gameArray=step.array;
+  			delete $scope.gameArray;
+  			$scope.gameArray=copy(step.array);
+  			array=$scope.gameArray;
   			$scope.score=step.score;
+  			delete $scope.prev;
   			$scope.prev=[];
   			var objectToHistory={};
   			objectToHistory.score=step.score;
-  			objectToHistory.array=copy();
+  			objectToHistory.array=copy(step.array);
+  			objectToHistory.emptyObject=copyEmpty(step.emptyObject);
+  			var noChange=true;
   			$scope.prev.push(objectToHistory);
   		});
   	}
@@ -524,8 +530,8 @@ angular.module('2048App')
   		$timeout(function(){
   			var objectToHistory={};
   			objectToHistory.score=$scope.score;
-  			objectToHistory.array=copy();
-
+  			objectToHistory.array=copy($scope.gameArray);
+  			objectToHistory.emptyObject=copyEmpty(empty);
   			$scope.prev.push(objectToHistory);
   			$scope.gameArray=array;
   			
@@ -574,16 +580,26 @@ $doc.on('keydown', main);
 $scope.$on('$destroy',function(){
   $doc.off('keydown', main);
 })
-function copy(){
+function copy(arrays){
 	var moveArray=[];
 	for (var i = 0; i < 4; i++) {
 		moveArray[i]=[];
 		for (var j = 0; j < 4; j++) {
-			moveArray[i][j]=$scope.gameArray[i][j];
+			moveArray[i][j]=arrays[i][j];
 		};
 			
 	};
 	return moveArray;
+}
+//Coping empty object to be able to go back in plays
+function copyEmpty(object)
+{
+	var newEmpty={};
+	var keysObject=Object.keys(object);
+	for (var i = 0; i < keysObject.length; i++) {
+		newEmpty[keysObject[i]]=true;
+	};
+	return newEmpty;
 }
 //According with history
 $scope.status = {
