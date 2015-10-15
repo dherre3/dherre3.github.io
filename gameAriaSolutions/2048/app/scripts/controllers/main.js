@@ -21,12 +21,16 @@ angular.module('2048App')
   	var noChange=true;
   	$scope.prev=[];
 
-  	$scope.goBackToStep=function(stepArray)
+  	$scope.goBackToStep=function(step)
   	{
   		$timeout(function(){
-  			$scope.gameArray=stepArray;
+  			$scope.gameArray=step.array;
+  			$scope.score=step.score;
   			$scope.prev=[];
-  			$scope.prev.push(copy());
+  			var objectToHistory={};
+  			objectToHistory.score=step.score;
+  			objectToHistory.array=copy();
+  			$scope.prev.push(objectToHistory);
   		});
   	}
   	$scope.restart=function()
@@ -49,6 +53,7 @@ angular.module('2048App')
 	  		
 	  		array[i]=column;
 	  	};	
+	  	$scope.score=0;
 	  	var firstRandom=Math.floor(4*Math.random());
 		var secondRandom=Math.floor(4*Math.random());
 		array[firstRandom][secondRandom]=pickTwoOrFour();
@@ -189,6 +194,7 @@ angular.module('2048App')
 	  						track=i;
 	  					}else{
 	  						array[track][index]=2*array[i][index];
+	  						$scope.score=$scope.score+array[track][index];
 	  						if(array[track][index]==2048)
 	  						{
 	  							alert('You have won the game!!!');
@@ -222,6 +228,7 @@ angular.module('2048App')
 	  						track=3-i;
 	  					}else{
 	  						array[track][index]=2*array[3-i][index];
+	  						$scope.score=$scope.score+array[track][index];
 	  						if(array[track][index]==2048)
 	  						{
 	  							alert('You have wont the game!!!');
@@ -255,6 +262,7 @@ angular.module('2048App')
 	  						track=i;
 	  					}else{
 	  						array[index][track]=2*array[index][i];
+	  						$scope.score=$scope.score+array[index][track];
 	  						if(array[index][track]==2048)
 	  						{
 	  							alert('You have wont the game!!!');
@@ -287,6 +295,7 @@ angular.module('2048App')
 	  						track=3-i;
 	  					}else{
 	  						array[index][track]=2*array[index][3-i];
+	  						$scope.score=$scope.score+array[index][track];
 	  						if(array[index][track]==2048)
 	  						{
 	  							alert('You have wont the game!!!');
@@ -513,7 +522,11 @@ angular.module('2048App')
   			addNew();
   		}
   		$timeout(function(){
-  			$scope.prev.push(copy());
+  			var objectToHistory={};
+  			objectToHistory.score=$scope.score;
+  			objectToHistory.array=copy();
+
+  			$scope.prev.push(objectToHistory);
   			$scope.gameArray=array;
   			
   		});
