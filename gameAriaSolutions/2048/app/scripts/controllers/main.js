@@ -238,7 +238,7 @@ angular.module('2048App')
 	  						$scope.score=$scope.score+array[track][index];
 	  						if(array[track][index]==2048)
 	  						{
-	  							alert('You have wont the game!!!');
+	  							alert('You have won the game!!!');
 	  						}
 	  						array[3-i][index]=0;
 	  						added=true;
@@ -272,7 +272,7 @@ angular.module('2048App')
 	  						$scope.score=$scope.score+array[index][track];
 	  						if(array[index][track]==2048)
 	  						{
-	  							alert('You have wont the game!!!');
+	  							alert('You have won the game!!!');
 	  						}
 	  						array[index][i]=0;
 	  						added=true;
@@ -305,7 +305,7 @@ angular.module('2048App')
 	  						$scope.score=$scope.score+array[index][track];
 	  						if(array[index][track]==2048)
 	  						{
-	  							alert('You have wont the game!!!');
+	  							alert('You have won the game!!!');
 	  						}
 	  						array[index][3-i]=0;
 	  						added=true;
@@ -541,6 +541,8 @@ angular.module('2048App')
   		
   		if(noChange&&Object.keys(empty).length==0)
   		{
+  			//checkIfNoMoreMoves() To be implemented!, checks every direction for
+  			//moves
   			alert('GameOver');
   		}
 
