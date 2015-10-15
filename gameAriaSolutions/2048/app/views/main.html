@@ -34,7 +34,7 @@
  <span style="text-align:center"><h5>Score: {{pr.score}}</h5></span>
   <tr ng-repeat="i in [0,1,2,3]">
     <th ng-repeat="j in [0,1,2,3]" align="center" style="font-size:50px;padding-left:50px;border:1px solid grey;border-radius:2px;color:white" ng-style="{'background-color': style(pr.array[i][j])}">
-      {{pr.array[i][j]}}
+      &nbsp;<span ng-show="pr.array[i][j]!=0">{{pr.array[i][j]}}</span>
     </th>
   </tr>
 
