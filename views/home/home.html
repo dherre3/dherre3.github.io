@@ -1,6 +1,6 @@
 <div class="home" style="width:100vw;height:100vh;margin-top:-20px;">
 <div class="container-fluid" style="margin-top:-10px">
- 
+
    <div class=" cols-xs-12 col-sm-4 col-lg-4 " style="margin-left:2%;">
    <div align="center" style="margin-top:80px" class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
    <h3 >David Fernando Herrera</h3>  </div>
@@ -12,25 +12,23 @@
     </div>
     </div>
     </div>
-   	
-   	 <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12" style="margin-top:-6%" >
-     <hr>
+
+   	 <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12" style="margin-top:-4%;background-color:rgba(255,255,255,0.3);border-radius:4px;padding:3px" >
       <p style="font-size:16px" style="text-align:center">
-        
+
       <strong>Current Position:</strong><br>
-      Software Developer for the MUHC Medical Physics department<br>
+      {{position}}<br>
       <strong>Major:</strong><br>
       Computer Science and Physics</p>
-        <hr>
 </div>
 </div>
-  
 
-   <div align="center" class="social col-xs-12 col-lg-12 col-md-12 col-sm-12">
-  <a href="https://www.facebook.com/david.f.herrera" class="link facebook" target="_parent"><span class="fa fa-facebook-square"></span></a>
-  <a href="https://ca.linkedin.com/pub/david-herrera/91/74b/489" class="link twitter" target="_parent"><span class="fa fa-linkedin-square"></span></a>
-  <a href="https://github.com/dherre3" class="link google-plus" target="_parent"><span class="fa fa-github"></span></a>
-</div>	
+
+   <div align="center" class="social col-xs-12 col-lg-12 col-md-12 col-sm-12" style="margin-top:10px">
+  <a href ng-click="openContact('facebook')" class="link facebook" target="_parent"><span class="fa fa-facebook-square"></span></a>
+  <a href ng-click="openContact('linkedin')" class="link twitter" target="_parent"><span class="fa fa-linkedin-square"></span></a>
+  <a href ng-click="openContact('github')" class="link google-plus" target="_parent"><span class="fa fa-github"></span></a>
+</div>
    </div>
     <div class="container col-xs-12 col-sm-7 col-lg-7" style="margin-left:2%;margin-top:60px">
     <h5>About me:</h5>
@@ -39,8 +37,7 @@
   <div class="panel-body" style="background:rgba(255,255,255,0.3)">
   <div>
     <p id="paragraph" ng-style="{'font-size':getStyle()}">
-  My name is David Herrera, I am a student currently finishing my last semester of Computer Science and Physics at McGill University. I have a deep passion for 
-  mathematical models that have underlying consequences in the world around us.<a type="button" class="btn" data-toggle="modal" data-target="#myModal" ng-hide="moreInfo" href style="font-size:11px;text-decoration:none" > More Info&raquo;</a> </p>
+  {{IntroParagraph|limitTo:1000}}<a type="button" class="btn" data-toggle="modal" data-target="#myModal" ng-hide="moreInfo" href style="font-size:11px;text-decoration:none" > More Info&raquo;</a> </p>
   </div>
 
     <div id="myModal" class="modal fade" role="dialog">
@@ -54,22 +51,8 @@
       </div>
       <div class="modal-body" style="overflow-y:scroll">
         <div><p >
-        My name is David Herrera, I am a student currently finishing my last semester of Computer Science and Physics at McGill University. I have a deep passion for 
-  mathematical models that have underlying consequences in the world around us, most specifically I have cultivated an interest in Biophysics. 
-  I am currently working on a project that involves a new theory called adaptive sorting to explain the phenomena of synergism in the context of T-cell ligands
-  and foreing ligands.
-  My previous work has included flourecence microscopy where a software called DSpIDA to analyze fluorescent images from a TIRFM was used, and a relationship between 
-  the number of fluorecent particles in a molecule vs. the diffusion state (speed) was found in cells transfected with a fluorescent label. 
-  In terms of programming I really enjoy thinking about beautiful design whose objective is to make user experience simple and pleasant, I also enjoy thinking about ideas that 
-  exploit common human psychology and human patterns.<br> <br>In terms of experience, last summer I worked on a project called CANDLE, which was an effort to transform a MATLAB software that
-  performed certain filters and image transformations to neuron images, into an ImageJ plug-in, as the idea was to make the software free and available to anyone.
-  For this project we decided to use Jython as the language, and the Java Native Access, as some of the functions were mex files coming from C programs. This project is on the last 
-  stages of testing after extensive 8 months of work.<br><br>
-  Currently, I have two projects going on, one of them is a game to help with the maping of neurons by gamification. The application is using Java's library LibGDX and the idea is to make it a multiplatform application.
-  Lastly I am also interested in web development, the design, the interface, and the functionality by making the different elements and languages work together. I am currently learning Ruby and Ruby on rails and will
-  hopefully start a project soon enough.<br><br>
-  In my spare time I enjoy playing and watching soccer, running, biking, playing ping pong and reading about inspiring figures such as my personal hero Richard Feynman, and playing video games. 
-  .</p></div>
+          {{IntroParagraph}}
+</p></div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -78,12 +61,12 @@
 
   </div>
 </div>
- 
+
   </div>
   </div>
-  <div style="margin-top:-10px"><h5>Activity Log:</h5></div>
+  <div style="margin-top:-10px"><strong>Activity Log: </strong><a href ng-click="open()">See all</a></div>
   <div class="panel panel-default" style="background-color:transparent" >
-  <div class="panel-body" style="height:275px;overflow-y:scroll;overflow-x:hidden;background:rgba(255,255,255,0.7)">
+  <div class="panel-body" style="height:50vh;overflow-y:scroll;overflow-x:hidden;background:rgba(255,255,255,0.7)">
   	<div ng-hide="$index>shownUpdates" ng-repeat="update in updates">
   		<hr ng-show="$index!=0" >
   		<div class="container" >
@@ -100,8 +83,8 @@
                 </div>
             </div>
   		</div>
-     
-  		
+
+
   	</div>
     <hr>
      <div ng-hide="shownUpdates>updates.length-1" align="center" class="decoLinks timeline-id"><a href ng-click="moreUpdates();">More Updates</a></div>
@@ -114,4 +97,34 @@
   </div>
   </div>
   </div>
-  <div class="visible-xs home" style="width:100vw;height:100vh;margin-top:-20px;">
+  <script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Updates</h3>
+    </div>
+    <div class="modal-body">
+    <div ng-hide="$index>shownUpdates" ng-repeat="update in updates">
+      <hr ng-show="$index!=0" >
+      <div class="container-fluid" >
+        <div class="col-sm-1 col-lg-1 col-md-1 hidden-xs">
+                <img ng-src="./img/myphot2.jpg" class="timeline-image img-responsive" >
+            </div>
+            <div class="col-sm-11 col-lg-11 col-md-11 col-xs-12">
+              <div class="timeline-date">{{update.Timestamp}}</div>
+                <div class="timline-from">
+                  <span class="timeline-name">{{update.Title}}</span>
+                  <span class="timeline-id"><a href="https://github.com/dherre3" >@dherre3</a></span>
+                </div>
+                <div class="timeline-message" ng-bind-html="update.Content| to_trusted">
+                </div>
+            </div>
+      </div>
+
+
+    </div>
+    <hr>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="cancel()">Close</button>
+    </div>
+</script>
+  <div class="visible-xs home" style="width:100vw;height:100vh;margin-top:-20px;"></div>

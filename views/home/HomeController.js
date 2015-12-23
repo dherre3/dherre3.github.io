@@ -1,26 +1,45 @@
 var myWeb=angular.module('myWebsite');
 
-myWeb.controller('HomeController', ['$scope', '$timeout','$filter', function ($scope, $timeout,$filter) {
+myWeb.controller('HomeController', ['$scope', '$timeout','$filter','$uibModal', function ($scope, $timeout,$filter,$uibModal) {
 	//Prevents more info link to display more information from my website
     $scope.moreInfo = false;
     $scope.shownUpdates=2;
-    var firebaseLink = new Firebase('https://blazing-inferno-1723.firebaseio.com/Website'); //Creates link to firebase database and grabs all events
-    
+    //$scope.IntroParagraph="Hello, welcome to my site, my name is David Herrera, I am a recently graduated McGillian. I have a deep passion for mathematical models that have underlying consequences in the world around us. For now I am a software developer currently working in web and app development at the Glen hospital. I am currently enjoying learning about machine learning and cryptography. I have developed the Patient Oncology Patient Application for the cancer center at the MUHC Glen site in Montreal, this project was a huge collaborative effort between the departments of computer science, medical physics and radiation oncology. I have been the main developer for this project developing successfully a web, mobile, tablet friendly application, and creating the architecture for the project including security, backend API, and a responsive site for the admins to control the flow of the application. Do not hesitate to send me a message if you would like to pick my brain.";
     /**
      * @methodof HomeController
      * @Description Grabs updates from firebase for the log and puts them in the $scope.update object
-     * @param {void} void none 
+     * @param {void} void none
 	 * @return {void} Sets the $scope.update function object.
-     * 
+     *
      */
+  $scope.open = function () {
+    console.log($scope.updates);
+  var modalInstance = $uibModal.open({
+    animation: true,
+    templateUrl: 'myModalContent.html',
+    controller: 'ModalInstanceCtrl',
+    size: 'lg',
+    resolve: {
+      items: function () {
+        return $scope.updates;
+      }
+    }
+  });
+};
+     var firebaseLink=new Firebase('https://blazing-inferno-1723.firebaseio.com/Website');
      $scope.updates=[];
+     firebaseLink.child('Intro').on('value',function(intro){
+       $timeout(function(){
+         $scope.IntroParagraph=intro.val();
+       });
+     });
+     firebaseLink.child('Position').on('value',function(intro){
+       $timeout(function(){
+         $scope.position=intro.val();
+       });
+     });
     firebaseLink.child('Updates').on('value', function (snapshot) {
         $timeout(function () {
-        	/**
-        	 * @memberof firebaseUpdates
-        	 * @member {{$scope.updates}}
-        	 * @property Date date of the log update
-        	 */
              var firebaseObject=snapshot.val();
              console.log(firebaseObject);
              var updatesObject=firebaseObject;
@@ -50,7 +69,7 @@ myWeb.controller('HomeController', ['$scope', '$timeout','$filter', function ($s
                 }
 
                 updatesObject[firebaseArray[i]].Timestamp = message;
-                $scope.updates.push(updatesObject[firebaseArray[i]]); 
+                $scope.updates.push(updatesObject[firebaseArray[i]]);
                 console.log(updatesObject[firebaseArray[i]].Content);
                 }
              };
@@ -60,13 +79,13 @@ myWeb.controller('HomeController', ['$scope', '$timeout','$filter', function ($s
         console.log(error);
     });
 	/**
-	 * 
-	 * @function changeDates 
+	 *
+	 * @function changeDates
 	 * @memberof HomeController
 	 * @description Function Converts dates from the firebase date string of the backend to data javascript format
-	 * @param {void} void none 
+	 * @param {void} void none
 	 * @return {date} Returns a date object converted from the string received from firebase
-	 * 
+	 *
 	 */
 	//ChangeDates just formats the firebase strings into javascript format
     $scope.getStyle = function () {
@@ -81,5 +100,34 @@ myWeb.controller('HomeController', ['$scope', '$timeout','$filter', function ($s
         $scope.shownUpdates+=3;
 
     };
+    $scope.openContact=function(field)
+    {
+      if(field=='facebook')
+      {
+        window.open('https://www.facebook.com/david.f.herrera','_blank');
+
+      }else if(field=='linkedin')
+      {
+        window.open('https://ca.linkedin.com/pub/david-herrera/91/74b/489','_blank');
+
+      }else if(field=='github')
+      {
+        window.open('https://github.com/dherre3','_blank');
+      }
+    }
 
 }]);
+
+myWeb.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items) {
+
+  $scope.updates = items;
+
+
+  $scope.ok = function () {
+    $uibModalInstance.close($scope.selected.item);
+  };
+
+  $scope.cancel = function () {
+    $uibModalInstance.dismiss('cancel');
+  };
+});

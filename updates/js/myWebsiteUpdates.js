@@ -121,7 +121,7 @@ myAppWebsite.controller('LoginUpdatesController',function($scope,$state, Auth){
       }).catch(function(error) {
         	$scope.error = error;
       });
-	
+
 	};
 
 });
@@ -142,13 +142,14 @@ myAppWebsite.filter('dateToFirebase',function(){
 myAppWebsite.controller('ManageUpdatesController',['$scope','$filter','$timeout',function($scope,$filter,$timeout){
 	var ref=new Firebase('https://blazing-inferno-1723.firebaseio.com/Website');
 	$scope.updates={};
-	ref.child('Updates').on('child_added',function(snapshot){
+	ref.child('Updates').on('value',function(snapshot){
 		var child=snapshot.val();
+		console.log(child);
 		$timeout(function(){
-			$scope.updates[snapshot.key()]=child;
-		})
+			$scope.updates=snapshot.val();
+		});
+
 	});
-	
 
 
 }]);
@@ -205,6 +206,28 @@ myAppWebsite.controller('AddUpdatesController',function($filter, $scope){
 
 myAppWebsite.controller('UpdatesController',['$scope',function($scope){}]);
 
-myAppWebsite.controller('ManageProfileController',['$scope',function($scope){}]);
+myAppWebsite.controller('ManageProfileController',['$scope','$timeout',function($scope,$timeout){
+
+	$scope.position="Software Developer for the MUHC Medical Physics department";
+	//$scope.IntroParagraph="Hello, welcome to my site, my name is David Herrera, I am a recently graduated McGillian. I have a deep passion for mathematical models that have underlying consequences in the world around us. For now I am a software developer currently working in web and app development at the Glen hospital. I am currently enjoying learning about machine learning and cryptography. I have developed the Patient Oncology Patient Application for the cancer center at the MUHC Glen site in Montreal, this project was a huge collaborative effort between the departments of computer science, medical physics and radiation oncology. I have been the main developer for this project developing successfully a web, mobile, tablet friendly application, and creating the architecture for the project including security, backend API, and a responsive site for the admins to control the flow of the application. Do not hesitate to send me a message if you would like to pick my brain."
+	var ref=new Firebase('https://blazing-inferno-1723.firebaseio.com/Website');
+	ref.child('Intro').on('value',function(snapshot){
+		$timeout(function(){
+			$scope.IntroParagraph=snapshot.val();
+		});
+	});
+	$scope.updateField=function(field, value)
+	{
+		ref.child(field).set(value);
+		$scope.editPosition=false;
+		$scope.editIntro=false;
+		console.log('Boom');
+	}
+
+
+
+
+
+
+}]);
 myAppWebsite.controller('ManageProjectsController',['$scope',function($scope){}]);
- 
