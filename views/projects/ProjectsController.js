@@ -25,7 +25,7 @@ myApp.controller('ProjectsController',function($scope,$timeout,$location){
       	} else {
         	// call $anchorScroll() explicitly,
         	// since $location.hash hasn't changed
-        	$anchorScroll();
+        	//$anchorScroll();
       	}
 
 	}

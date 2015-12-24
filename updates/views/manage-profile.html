@@ -1,14 +1,21 @@
-<div class="home" style="width:100vw;height:100%;margin-top:20px;">
+<div class="home" style="width:100vw;height:90vh;margin-top:20px;">
 <div class="container-fluid" style="margin-top:10px">
 
    <div class=" cols-xs-12 col-sm-4 col-lg-4 " style="margin-left:2%;">
    <div align="center" style="margin-top:80px" class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
    <h3 >David Fernando Herrera</h3>  </div>
 
-   <div align="center" class="col-xs-12 col-lg-12 col-md-12 col-sm-12" style="padding:5% 10% 5% 10%">
+   <div align="center" class="col-xs-12 col-lg-12 col-md-12 col-sm-12" style="padding:0 10% 5% 10%">
+     <p><a href ng-click="(editImage)?editImage=false:editImage=true"><i class="fa fa-edit"></i></a></p>
+       <div ng-show="editImage">
+         <input type="file" class="" fileread="picUpload" class="form-control">
+         <button class="btn btn-success" ng-click="updateImage()">update</button>
+         <button class="btn btn-danger" ng-click="editImage=false">cancel</button>
+       </div>
    	<div class="circleBaseOutter">
-    <div class="circleBaseInner">
-    </div>
+      <div class="circleBaseInner">
+        <img class="circleBaseInner" ng-src="{{profileImage}}"></img>
+      </div>
     </div>
     </div>
 

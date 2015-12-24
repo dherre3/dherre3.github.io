@@ -7,10 +7,11 @@
    <div>
 
    <div align="center" class="col-xs-12 col-lg-12 col-md-12 col-sm-12" style="padding:5% 10% 5% 10%">
-   	<div class="circleBaseOutter">
-    <div class="circleBaseInner">
-    </div>
-    </div>
+     <div class="circleBaseOutter">
+       <div class="circleBaseInner">
+         <img class="circleBaseInner" ng-src="{{profilePicture}}"></img>
+       </div>
+     </div>
     </div>
 
    	 <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12" style="margin-top:-4%;background-color:rgba(255,255,255,0.3);border-radius:4px;padding:3px" >
@@ -33,7 +34,7 @@
     <div class="container col-xs-12 col-sm-7 col-lg-7" style="margin-left:2%;margin-top:60px">
     <h5>About me:</h5>
 
-    <div class="panel panel-default" style="background-color:transparent">
+    <div class="panel panel-default" style="background-color:transparent;border-radius:4px">
   <div class="panel-body" style="background:rgba(255,255,255,0.3)">
   <div>
     <p id="paragraph" ng-style="{'font-size':getStyle()}">
@@ -66,14 +67,14 @@
   </div>
   <div style="margin-top:-10px"><strong>Activity Log: </strong><a href ng-click="open()">See all</a></div>
   <div class="panel panel-default" style="background-color:transparent" >
-  <div class="panel-body" style="height:50vh;overflow-y:scroll;overflow-x:hidden;background:rgba(255,255,255,0.7)">
+  <div class="panel-body" style="height:50vh;overflow-y:scroll;overflow-x:hidden;background:rgba(255,255,255,0.6)">
   	<div ng-hide="$index>shownUpdates" ng-repeat="update in updates">
   		<hr ng-show="$index!=0" >
-  		<div class="container" >
+  		<div class="row" >
   			<div class="col-sm-1 col-lg-1 col-md-1 hidden-xs">
                 <img ng-src="./img/myphot2.jpg" class="timeline-image img-responsive" >
             </div>
-            <div class="col-sm-5 col-lg-5 col-md-5 col-xs-12">
+            <div class="col-sm-11 col-lg-11 col-md-11 col-xs-12">
             	<div class="timeline-date">{{update.Timestamp}}</div>
                 <div class="timline-from">
                   <span class="timeline-name">{{update.Title}}</span>

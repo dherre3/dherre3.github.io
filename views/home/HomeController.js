@@ -26,9 +26,20 @@ myWeb.controller('HomeController', ['$scope', '$timeout','$filter','$uibModal', 
     }
   });
 };
+
      var firebaseLink=new Firebase('https://blazing-inferno-1723.firebaseio.com/Website');
      $scope.updates=[];
-     firebaseLink.child('Intro').on('value',function(intro){
+     firebaseLink.on('value',function(profileValues)
+     {
+       var fields=profileValues.val();
+       $timeout(function(){
+         $scope.profilePicture=fields['ProfilePicture'];
+         $scope.IntroParagraph=fields['Intro'];
+         $scope.position=fields['Position'];
+         setUpdates(fields['Updates']);
+       });
+     });
+     /*firebaseLink.child('Intro').on('value',function(intro){
        $timeout(function(){
          $scope.IntroParagraph=intro.val();
        });
@@ -40,54 +51,50 @@ myWeb.controller('HomeController', ['$scope', '$timeout','$filter','$uibModal', 
      });
     firebaseLink.child('Updates').on('value', function (snapshot) {
         $timeout(function () {
-             var firebaseObject=snapshot.val();
-             console.log(firebaseObject);
-             var updatesObject=firebaseObject;
-             var firebaseArray=Object.keys(updatesObject);
-             for (var i = 0; i < firebaseArray.length; i++) {
-                var message = '';
-                if(updatesObject[firebaseArray[i]]!=null){
-                    updatesObject[firebaseArray[i]].Date=$filter('formatDate')(updatesObject[firebaseArray[i]].Date);
-                    console.log(updatesObject[firebaseArray[i]].Date);
-                    var dateUpdate=updatesObject[firebaseArray[i]].Date;
-                    var temp = Math.floor((new Date() - dateUpdate) / (1000));
-                    message = temp + ' sec';
-                if(temp>59){
-                    temp=Math.floor(temp/60);
-                    message = temp + ' min';
-                    if (temp > 60) {
-                        temp = Math.floor(temp / 60);
-                        message = temp + ' hours';
-                        if (temp > 24) {
-                            temp = Math.floor(temp / 24);
-                            message = temp + ' days';
-                            if(temp>30){
-                                message=dateUpdate.getDate()+'/'+dateUpdate.getMonth()+'/'+dateUpdate.getFullYear();
-                            }
-                        }
-                    }
-                }
 
-                updatesObject[firebaseArray[i]].Timestamp = message;
-                $scope.updates.push(updatesObject[firebaseArray[i]]);
-                console.log(updatesObject[firebaseArray[i]].Content);
-                }
-             };
-             $scope.updates=$filter('orderBy')($scope.updates,'Date',true);
         });
     }, function (error) {
         console.log(error);
-    });
-	/**
-	 *
-	 * @function changeDates
-	 * @memberof HomeController
-	 * @description Function Converts dates from the firebase date string of the backend to data javascript format
-	 * @param {void} void none
-	 * @return {date} Returns a date object converted from the string received from firebase
-	 *
-	 */
-	//ChangeDates just formats the firebase strings into javascript format
+    });*/
+	  function setUpdates(updates)
+    {
+      var firebaseObject=updates;
+      console.log(firebaseObject);
+      var updatesObject=firebaseObject;
+      var firebaseArray=Object.keys(updatesObject);
+      for (var i = 0; i < firebaseArray.length; i++) {
+         var message = '';
+         if(updatesObject[firebaseArray[i]]!=null){
+             updatesObject[firebaseArray[i]].Date=$filter('formatDate')(updatesObject[firebaseArray[i]].Date);
+             console.log(updatesObject[firebaseArray[i]].Date);
+             var dateUpdate=updatesObject[firebaseArray[i]].Date;
+             var temp = Math.floor((new Date() - dateUpdate) / (1000));
+             message = temp + ' sec';
+         if(temp>59){
+             temp=Math.floor(temp/60);
+             message = temp + ' min';
+             if (temp > 60) {
+                 temp = Math.floor(temp / 60);
+                 message = temp + ' hours';
+                 if (temp > 24) {
+                     temp = Math.floor(temp / 24);
+                     message = temp + ' days';
+                     if(temp>30){
+                         message=dateUpdate.getDate()+'/'+dateUpdate.getMonth()+'/'+dateUpdate.getFullYear();
+                     }
+                 }
+             }
+         }
+
+         updatesObject[firebaseArray[i]].Timestamp = message;
+         $scope.updates.push(updatesObject[firebaseArray[i]]);
+         console.log(updatesObject[firebaseArray[i]].Content);
+         }
+      };
+      $scope.updates=$filter('orderBy')($scope.updates,'Date',true);
+    }
+
+
     $scope.getStyle = function () {
         if (!$scope.moreInfo) {
             return '13px';

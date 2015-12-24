@@ -1,7 +1,7 @@
 .projects{
-    background: #222 url("http://25.media.tumblr.com/a408ad9af259cf827ed4599d60bcb0a9/tumblr_myebwtELvb1st5lhmo1_1280.jpg");
+  background: #222 url("../../img/project-background.jpg");
 	background-size:cover;
-	background-position: center; 
+	background-position: center;
 	background-repeat: repeat-y;
 
 }
@@ -10,14 +10,15 @@
   filter: alpha(opacity=50);  /* IE 5-7 */
   -moz-opacity: 0.5;          /* Netscape */
   -khtml-opacity: 0.5;        /* Safari 1.x */
-  opacity: 0.5;  
+  opacity: 0.5;
 }
 
 .projectDiv{
 	border:1px solid grey;
 	background-color:white;
+  margin-top:10px;
 	border-radius:5px;
-	height:70vh;
+	height:550px;
 
 
 }
@@ -25,7 +26,7 @@
 	border:1px solid grey;
 	background-color:white;
 	border-radius:5px;
-	height:435px;
+	height:550px;
 	margin-top:5px;
 	margin-bottom:20px;
 
@@ -41,7 +42,7 @@
 a {
  cursor: pointer;
  }
- 
+
 .decoLinks a:hover{
 	text-decoration: none;
 }

@@ -177,6 +177,7 @@ myAppWebsite.controller('AddUpdatesController',function($filter, $scope){
 		}
 	});
 
+
 	$scope.updateSubmit=function(){
 		var des=$scope.description;
 		var tit=$scope.title;
@@ -216,6 +217,13 @@ myAppWebsite.controller('ManageProfileController',['$scope','$timeout',function(
 			$scope.IntroParagraph=snapshot.val();
 		});
 	});
+	$scope.updateImage=function()
+	{
+		console.log($scope.picUpload);
+		$scope.profileImage=$scope.picUpload;
+		ref.child('ProfilePicture').set($scope.profileImage);
+		$scope.editImage=false;
+	}
 	$scope.updateField=function(field, value)
 	{
 		ref.child(field).set(value);
@@ -223,11 +231,42 @@ myAppWebsite.controller('ManageProfileController',['$scope','$timeout',function(
 		$scope.editIntro=false;
 		console.log('Boom');
 	}
-
-
-
-
-
-
+	/*convertFileToDataURLviaFileReader('../../img/profile-pic.jpeg',function(url){
+		console.log(url);
+		$scope.profileImage=url;
+		//ref.child('ProfilePicture').set($scope.profileImage);
+	});*/
+	function convertFileToDataURLviaFileReader(url, callback)
+	{
+			var xhr = new XMLHttpRequest();
+			xhr.responseType = 'blob';
+			xhr.onload = function() {
+					var reader  = new FileReader();
+					reader.onloadend = function () {
+							callback(reader.result);
+					}
+					reader.readAsDataURL(xhr.response);
+			};
+			xhr.open('GET', url);
+			xhr.send();
+	}
+}]);
+myAppWebsite.directive("fileread", [function () {
+    return {
+        scope: {
+            fileread: "="
+        },
+        link: function (scope, element, attributes) {
+            element.bind("change", function (changeEvent) {
+                var reader = new FileReader();
+                reader.onload = function (loadEvent) {
+                    scope.$apply(function () {
+                        scope.fileread = loadEvent.target.result;
+                    });
+                }
+                reader.readAsDataURL(changeEvent.target.files[0]);
+            });
+        }
+    }
 }]);
 myAppWebsite.controller('ManageProjectsController',['$scope',function($scope){}]);
