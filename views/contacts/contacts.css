@@ -1,5 +1,5 @@
 .contacts{
-  background: #222 url("http://hdw.datawallpaper.com/abstract/library-322062.jpg") no-repeat fixed center;
+  background: #222 url("../../img/contacts-background.jpg") no-repeat fixed center;
   background-size: cover;
   overflow: hidden;
   color:white;
@@ -10,7 +10,7 @@
 }
 
 @media screen and (max-width: 500px) {
-    
+
 }
 .socialContacts .link {
   display: inline-block;
