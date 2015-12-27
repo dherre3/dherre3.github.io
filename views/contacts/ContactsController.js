@@ -7,12 +7,23 @@ myApp.controller('ContactsController',function($scope,$filter){
 	$scope.alertOn=false;
 	$scope.newMessageEnable=false;
 	$scope.checked=false;
+	var regEmail= "^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$";
+	regEmail=new RegExp(regEmail);
 	$scope.$watchGroup(['title','content'], function(){
 		if($scope.title==''||$scope.content=='')
 		{
+			$scope.alertInvalid=false;
 			$scope.disableSendButton=true;
 		}else{
-			$scope.disableSendButton=false;
+
+			if(!regEmail.test($scope.title))
+			{
+				$scope.alertInvalid=true;
+			}else{
+				$scope.disableSendButton=false;
+				$scope.alertInvalid=false;
+			}
+
 		}
 	});
 
@@ -20,7 +31,7 @@ myApp.controller('ContactsController',function($scope,$filter){
 	$scope.sendMessage=function(){
 		var ref=new Firebase('https://blazing-inferno-1723.firebaseio.com//Website/Messages');
 		ref.push({
-			'title':$scope.title,
+			'email':$scope.title,
 			'content':$scope.content,
 			'date':$filter('dateToFirebase')(new Date)
 		});

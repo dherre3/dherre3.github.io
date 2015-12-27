@@ -58,15 +58,14 @@ myWeb.controller('HomeController', ['$scope', '$timeout','$filter','$uibModal', 
     });*/
 	  function setUpdates(updates)
     {
+      console.log('arrived');
       var firebaseObject=updates;
-      console.log(firebaseObject);
       var updatesObject=firebaseObject;
       var firebaseArray=Object.keys(updatesObject);
       for (var i = 0; i < firebaseArray.length; i++) {
          var message = '';
          if(updatesObject[firebaseArray[i]]!=null){
              updatesObject[firebaseArray[i]].Date=$filter('formatDate')(updatesObject[firebaseArray[i]].Date);
-             console.log(updatesObject[firebaseArray[i]].Date);
              var dateUpdate=updatesObject[firebaseArray[i]].Date;
              var temp = Math.floor((new Date() - dateUpdate) / (1000));
              message = temp + ' sec';

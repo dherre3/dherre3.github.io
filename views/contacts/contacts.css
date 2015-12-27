@@ -1,8 +1,12 @@
 .contacts{
-  background: #222 url("../../img/contacts-background.jpg") no-repeat fixed center;
+  background: brown url("../../img/contacts-background.jpg") no-repeat fixed center;
   background-size: cover;
   overflow: hidden;
   color:white;
+  background-color: brown;
+  margin-top: -10px;
+  height:100vh;
+  width:100vh;
 }
 .or{
 	color:brown;
@@ -52,7 +56,10 @@
   background-color: black;
   color: white;
 }
-
+.socialContacts .link.google-mail {
+  background-color: red;
+  color: white;
+}
 .socialContacts .link.twitter {
   background-color: #00ACEE;
   color: white;
