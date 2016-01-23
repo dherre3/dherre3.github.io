@@ -14,7 +14,7 @@
      </div>
     </div>
 
-   	 <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12" style="margin-top:-4%;background-color:rgba(255,255,255,0.3);border-radius:4px;padding:3px" >
+   	 <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12" style="margin-top:-4%;background-color:rgba(255,255,255,0.8);border-radius:4px;padding:3px" >
       <p style="font-size:16px" style="text-align:center">
 
       <strong>Current Position:</strong><br>
@@ -35,7 +35,7 @@
     <h5>About me:</h5>
 
     <div class="panel panel-default" style="background-color:transparent;border-radius:4px">
-  <div class="panel-body" style="background:rgba(255,255,255,0.3)">
+  <div class="panel-body" style="background:rgba(255,255,255,0.5)">
   <div>
     <p id="paragraph" ng-style="{'font-size':getStyle()}">
   {{IntroParagraph|limitTo:1000}}<a type="button" class="btn" data-toggle="modal" data-target="#myModal" ng-hide="moreInfo" href style="font-size:11px;text-decoration:none" > More Info&raquo;</a> </p>
@@ -67,7 +67,7 @@
   </div>
   <div style="margin-top:-10px"><strong>Activity Log: </strong><a href ng-click="open()">See all</a></div>
   <div class="panel panel-default" style="background-color:transparent" >
-  <div class="panel-body" style="height:50vh;overflow-y:scroll;overflow-x:hidden;background:rgba(255,255,255,0.6)">
+  <div class="panel-body" style="height:50vh;overflow-y:scroll;overflow-x:hidden;background:rgba(255,255,255,0.8)">
   	<div ng-hide="$index>shownUpdates" ng-repeat="update in updates">
   		<hr ng-show="$index!=0" >
   		<div class="row" >

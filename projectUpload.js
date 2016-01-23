@@ -7,7 +7,7 @@ project={};
 project.Description="MUHC Oncology multiplatform application for patients using Apache Cordova.";
 project.Technologies="HTML, Javascript, NodeJS, CSS, AngularJS, Cordova, OnsenUI, Firebase, MySQL, PHP";
 project.Employer="MUHC Medical Physics & McGill Computer Science";
-project.Rolls={"1":"Building the applications architecture successfully protecting patient information by using Firebase as an intermediate database and a basic AES protocol for encryption.", 
+project.Rolls={"1":"Building the applications architecture successfully protecting patient information by using Firebase as an intermediate database and a basic AES protocol for encryption.",
 			 "2":"Use of Apache Cordova to build application for Android, IOS and Web. Created functionalities using native features such as push alerts, notifications, local and device storage, native calendar and Geo-location to implement the user notifications, data storage, appointment schedule and check-in respectively.",
 			"3":"Implemented backend daemon in NodeJS and initially PHP, built as server type listener connected to Firebase in order to upload the information from a MySQL server",
 				"4":"Created a messaging system making a secure channel of communication between doctor and patient as document exchanging"
@@ -18,7 +18,6 @@ project.Abstract={link:"https://github.com/dherre3/Hospital-Project/blob/master/
 project.Progress="First Demo Version Out";
 project.ImagePath="http://davidfherrerar.me/img/muhcapp.png";
 project.Type="Web Development";*/
-
 project.Title="MUHC Events";
 project.Description="Website application for the MUHC Research Center to provide a gate for people to RSVP to events and check past events as well as past winners.";
 project.Technologies="HTML, Javascript, CSS, AngularJS, Firebase";
@@ -31,7 +30,13 @@ project.Github={link:"https://github.com/dherre3/MUHCEvents"};
 //project.Abstract={link:"https://github.com/dherre3/Hospital-Project/blob/master/qplusApp/AppAbstract.pdf"};
 project.ImagePath="http://davidfherrerar.me/img/muhcevents.png";
 project.Type="Web Development";
-
+var project4={};
+project4.Title="8fractals";
+project.Description="A tool that allows you to visualize folders and files in a conceptual manner rather than the traditional";
+project.Technologies="HTML, Javascript, CSS, JQuery, Canvas, Firebase";
+project.Employer="Project";
+project.Rolls={"1":"Collaborated designing interface for 8 fractal", "2":"Making mobile app for 8fractal using Ionic"};
+project3.ImagePath="http://davidfherrerar.me/img/cardgame.png";
 project3={};
 project3.Title="Card Game IOS App";
 project3.Description="Memory Card game with two game modalities";

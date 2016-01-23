@@ -269,4 +269,7 @@ myAppWebsite.directive("fileread", [function () {
         }
     }
 }]);
-myAppWebsite.controller('ManageProjectsController',['$scope',function($scope){}]);
+myAppWebsite.controller('ManageProjectsController',['$scope',function($scope){
+	$scope.isCollapsed = false;
+	console.log('boom');
+}]);
